@@ -198,6 +198,7 @@ struct SettingsView: View {
                             .font(.system(size: 13, weight: isSelected ? .semibold : .regular))
                             .foregroundStyle(isSelected ? Theme.text : Theme.sub)
                             .lineLimit(1)
+                            .minimumScaleFactor(0.82)
                         Spacer()
                     }
                     .padding(.horizontal, 12)
@@ -323,7 +324,7 @@ struct SettingsView: View {
                                     .font(.system(size: 12, weight: .medium))
                                     .foregroundStyle(Theme.text)
                                     .lineLimit(1)
-                                    .fixedSize(horizontal: true, vertical: false)
+                                    .minimumScaleFactor(0.85)
                                 Spacer(minLength: 4)
                                 Image(systemName: "chevron.up.chevron.down")
                                     .font(.system(size: 9.5, weight: .bold))
@@ -331,7 +332,7 @@ struct SettingsView: View {
                             }
                             .padding(.horizontal, 11)
                             .padding(.vertical, 6)
-                            .frame(minWidth: 120, maxWidth: 155)
+                            .frame(minWidth: 120, maxWidth: 170)
                             .background(
                                 RoundedRectangle(cornerRadius: 7, style: .continuous)
                                     .fill(Theme.hover)

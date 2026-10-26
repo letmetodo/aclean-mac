@@ -137,7 +137,9 @@ struct SystemHealthCheckView: View {
                     .background(Capsule().fill(statusBadgeColor.opacity(0.12)))
                 }
 
-                Text("macOS \(ProcessInfo.processInfo.operatingSystemVersionString) · CleanMate Engine")
+                let os = ProcessInfo.processInfo.operatingSystemVersion
+                let osVer = os.patchVersion > 0 ? "\(os.majorVersion).\(os.minorVersion).\(os.patchVersion)" : "\(os.majorVersion).\(os.minorVersion)"
+                Text("macOS \(osVer) · CleanMate Engine")
                     .font(.system(size: 11))
                     .foregroundColor(Theme.sub)
             }
@@ -246,6 +248,8 @@ struct SystemHealthCheckView: View {
             Text("\(label) \(score)")
                 .font(.system(size: 11, weight: .semibold, design: .monospaced))
                 .foregroundColor(Theme.text.opacity(0.85))
+                .lineLimit(1)
+                .minimumScaleFactor(0.78)
         }
         .frame(maxWidth: .infinity)
     }
@@ -311,7 +315,10 @@ struct SystemHealthCheckView: View {
                     Text(optimizeSuccess ? L10n.localized(.memoryReleased) : L10n.localized(.oneKeyOptimize))
                         .font(.system(size: 12.5, weight: .bold))
                         .foregroundColor(.white)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.78)
                 }
+                .padding(.horizontal, 10)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 9)
                 .background(
@@ -329,7 +336,7 @@ struct SystemHealthCheckView: View {
             .disabled(isOptimizing)
         }
         .padding(16)
-        .frame(width: 200)
+        .frame(width: 212)
         .background(
             RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .fill(Theme.card)
@@ -392,7 +399,7 @@ struct SystemHealthCheckView: View {
                     title: L10n.localized(.healthDimPrivacy),
                     desc: L10n.localized(.healthDimPrivacyDesc),
                     score: privacyScore,
-                    actionTitle: L10n.localized(.moduleOrganizeDesc)
+                    actionTitle: L10n.localized(.moduleDeclutter)
                 ) {
                     state.open(.restore(.organize))
                 }
@@ -434,6 +441,8 @@ struct SystemHealthCheckView: View {
                 HStack(spacing: 4) {
                     Text(actionTitle)
                         .font(.system(size: 10.5, weight: .semibold))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.85)
                     Image(systemName: "chevron.right")
                         .font(.system(size: 8, weight: .bold))
                 }

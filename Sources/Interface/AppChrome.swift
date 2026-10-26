@@ -385,22 +385,23 @@ struct FullSidebar: View {
 
                 // 精简版启动磁盘容量卡片
                 VStack(alignment: .leading, spacing: 6) {
-                    HStack(spacing: 6) {
+                    HStack(spacing: 4) {
                         Image(systemName: "internaldrive.fill")
-                            .font(.system(size: 11))
+                            .font(.system(size: 10.5))
                             .foregroundStyle(Theme.accent)
                         Text(L10n.localized(.startupDisk))
-                            .font(.system(size: 11.5, weight: .semibold))
+                            .font(.system(size: 11, weight: .semibold))
                             .foregroundStyle(Theme.text)
                             .lineLimit(1)
-                            .fixedSize(horizontal: true, vertical: false)
+                            .minimumScaleFactor(0.8)
                         Spacer(minLength: 4)
                         Text("\(L10n.localized(.labelFreeAvailable)) \(Fmt.size(state.disk.free))")
-                            .font(.system(size: 10.5, weight: .medium))
+                            .font(.system(size: 10, weight: .medium))
                             .foregroundStyle(Theme.sub)
                             .monospacedDigit()
                             .lineLimit(1)
-                            .fixedSize(horizontal: true, vertical: false)
+                            .minimumScaleFactor(0.78)
+                            .layoutPriority(1)
                     }
                     DiskBar(used: state.disk.used, total: state.disk.total, height: 5, tint: Theme.accent)
                     HStack {
@@ -408,10 +409,11 @@ struct FullSidebar: View {
                             .font(.system(size: 9.5))
                             .foregroundStyle(Theme.tert)
                             .monospacedDigit()
+                            .lineLimit(1)
                         Spacer(minLength: 0)
                     }
                 }
-                .glassBentoCard(cornerRadius: 10, padding: 10)
+                .glassBentoCard(cornerRadius: 10, padding: 9)
 
                 // 偏好设置按钮
                 Button {
@@ -423,6 +425,7 @@ struct FullSidebar: View {
                         Text(L10n.localized(.preferencesEllipsis))
                             .font(.system(size: 12, weight: .medium))
                             .lineLimit(1)
+                            .minimumScaleFactor(0.85)
                         Spacer(minLength: 2)
                         Text("⌘,")
                             .font(.system(size: 10.5))
@@ -440,10 +443,11 @@ struct FullSidebar: View {
                 .buttonStyle(.plain)
                 .onHover { if $0 { NSCursor.pointingHand.push() } else { NSCursor.pop() } }
             }
-            .padding(.horizontal, 14)
+            .padding(.horizontal, 10)
             .padding(.bottom, 14)
         }
-        .frame(width: 218)
+        .frame(width: 218, alignment: .leading)
+        .clipped()
         .background {
             ZStack {
                 VisualEffectView(material: .sidebar, blendingMode: .behindWindow)
@@ -501,6 +505,7 @@ struct SidebarRow: View {
                         .font(.system(size: 13, weight: selected ? .semibold : .regular))
                         .foregroundStyle(selected ? Theme.text : Theme.text.opacity(0.86))
                         .lineLimit(1)
+                        .minimumScaleFactor(0.85)
 
                     Spacer(minLength: 0)
 
@@ -648,7 +653,7 @@ struct InfoPanel: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     metaRow(L10n.localized(.sortOptionBySize), Fmt.size(node.totalSize))
-                    if !node.path.isEmpty { metaRow("Path", node.path) }
+                    if !node.path.isEmpty { metaRow(L10n.localized(.metaPath), node.path) }
                     ForEach(Array(node.meta.enumerated()), id: \.offset) { _, m in
                         metaRow(m.0, m.1)
                     }

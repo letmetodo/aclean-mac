@@ -672,6 +672,8 @@ struct LiveMonitorView: View {
                 Text("\(L10n.localized(.activeProcesses)) (\(totalCount))")
                     .font(.system(size: 12.5, weight: .bold))
                     .foregroundStyle(Theme.text)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.82)
 
                 SearchField(text: $processSearchText, placeholder: tr(.searchProcessPlaceholder))
                     .frame(width: 195)
@@ -730,6 +732,8 @@ struct LiveMonitorView: View {
             HStack(spacing: 3) {
                 Spacer()
                 Text(label)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.78)
                 if isSelected {
                     Image(systemName: "arrowtriangle.down.fill")
                         .font(.system(size: 7))

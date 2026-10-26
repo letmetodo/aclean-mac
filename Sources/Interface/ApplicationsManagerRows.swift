@@ -587,11 +587,13 @@ struct IdleAppFeatureCard: View {
                 .font(.system(size: 12, weight: .bold))
                 .foregroundStyle(Theme.text)
                 .lineLimit(1)
+                .minimumScaleFactor(0.75)
 
             Text(tag)
                 .font(.system(size: 9.5, weight: .medium, design: .rounded))
                 .foregroundStyle(hover ? Theme.accent : Theme.sub)
                 .lineLimit(1)
+                .minimumScaleFactor(0.75)
         }
         .frame(width: 118, height: 96)
         .glassBentoCard(cornerRadius: 13, isHighlighted: false, isHovered: hover, padding: 6)

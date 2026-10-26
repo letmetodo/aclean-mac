@@ -4,6 +4,8 @@
 
 AClean brings everyday Mac maintenance tools into one SwiftUI app. Review scan results before taking action, explore disk usage visually, and inspect related files when uninstalling apps.
 
+Languages: [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · English · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
+
 ## Features
 
 - **Smart Cleanup** — scan supported application, developer, and system cache locations and review candidates before cleanup.

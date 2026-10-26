@@ -114,7 +114,8 @@ struct FanModeButton: View {
                 .font(.system(size: 10.5, weight: isSelected ? .bold : .medium))
                 .foregroundStyle(isSelected ? Theme.onAccent : Theme.text)
                 .lineLimit(1)
-                .fixedSize(horizontal: true, vertical: false)
+                .minimumScaleFactor(0.75)
+                .padding(.horizontal, 4)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 4)
                 .background(
