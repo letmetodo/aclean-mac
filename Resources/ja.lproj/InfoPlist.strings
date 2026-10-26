@@ -1,0 +1,6 @@
+CFBundleName = "ACleaner";
+CFBundleDisplayName = "ACleaner";
+NSDocumentsFolderUsageDescription = "ACleaner はファイルのスキャンにこの場所へのアクセスが必要です。削除対象はユーザーが選択します。";
+NSDownloadsFolderUsageDescription = "ACleaner はファイルのスキャンにこの場所へのアクセスが必要です。削除対象はユーザーが選択します。";
+NSDesktopFolderUsageDescription = "ACleaner はファイルのスキャンにこの場所へのアクセスが必要です。削除対象はユーザーが選択します。";
+NSAppleEventsUsageDescription = "ACleaner はファイルのスキャンにこの場所へのアクセスが必要です。削除対象はユーザーが選択します。";

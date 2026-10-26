@@ -1,0 +1,6 @@
+CFBundleName = "ACleaner";
+CFBundleDisplayName = "ACleaner";
+NSDocumentsFolderUsageDescription = "ACleaner needs access to this location to scan files. Cleanup requires your selection.";
+NSDownloadsFolderUsageDescription = "ACleaner needs access to this location to scan files. Cleanup requires your selection.";
+NSDesktopFolderUsageDescription = "ACleaner needs access to this location to scan files. Cleanup requires your selection.";
+NSAppleEventsUsageDescription = "ACleaner needs access to this location to scan files. Cleanup requires your selection.";

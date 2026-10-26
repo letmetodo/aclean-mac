@@ -1,0 +1,6 @@
+CFBundleName = "ACleaner";
+CFBundleDisplayName = "ACleaner";
+NSDocumentsFolderUsageDescription = "ACleaner가 파일을 검색하려면 이 위치에 대한 접근이 필요합니다. 정리할 항목은 사용자가 선택합니다.";
+NSDownloadsFolderUsageDescription = "ACleaner가 파일을 검색하려면 이 위치에 대한 접근이 필요합니다. 정리할 항목은 사용자가 선택합니다.";
+NSDesktopFolderUsageDescription = "ACleaner가 파일을 검색하려면 이 위치에 대한 접근이 필요합니다. 정리할 항목은 사용자가 선택합니다.";
+NSAppleEventsUsageDescription = "ACleaner가 파일을 검색하려면 이 위치에 대한 접근이 필요합니다. 정리할 항목은 사용자가 선택합니다.";

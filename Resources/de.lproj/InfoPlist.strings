@@ -1,0 +1,6 @@
+CFBundleName = "ACleaner";
+CFBundleDisplayName = "ACleaner";
+NSDocumentsFolderUsageDescription = "ACleaner benötigt Zugriff auf diesen Ort, um Dateien zu prüfen. Sie wählen die zu bereinigenden Dateien.";
+NSDownloadsFolderUsageDescription = "ACleaner benötigt Zugriff auf diesen Ort, um Dateien zu prüfen. Sie wählen die zu bereinigenden Dateien.";
+NSDesktopFolderUsageDescription = "ACleaner benötigt Zugriff auf diesen Ort, um Dateien zu prüfen. Sie wählen die zu bereinigenden Dateien.";
+NSAppleEventsUsageDescription = "ACleaner benötigt Zugriff auf diesen Ort, um Dateien zu prüfen. Sie wählen die zu bereinigenden Dateien.";

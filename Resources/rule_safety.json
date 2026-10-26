@@ -1,0 +1,3782 @@
+{
+  "maintenanceLimits": [
+    {
+      "default_selected": 0,
+      "needs_admin": 1,
+      "risk": "caution",
+      "status": "allowed",
+      "task_id": "clearDiskCache",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "forbidden",
+      "status": "forbidden",
+      "task_id": "coreduetCleanup",
+      "reversible": 0
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "caution",
+      "status": "allowed",
+      "task_id": "disableDSStore",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "forbidden",
+      "status": "forbidden",
+      "task_id": "diskPermissionsRepair",
+      "reversible": 0
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "caution",
+      "status": "allowed",
+      "task_id": "fixBrokenPrefs",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 1,
+      "risk": "safe",
+      "status": "allowed",
+      "task_id": "flushDNS",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "forbidden",
+      "status": "forbidden",
+      "task_id": "freeRAM",
+      "reversible": 0
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "forbidden",
+      "status": "forbidden",
+      "task_id": "killallInputMethod",
+      "reversible": 0
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "forbidden",
+      "status": "forbidden",
+      "task_id": "notificationCleanup",
+      "reversible": 0
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 1,
+      "risk": "caution",
+      "status": "allowed",
+      "task_id": "purgeableSpace",
+      "reversible": 0
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "forbidden",
+      "status": "forbidden",
+      "task_id": "quarantineCleanup",
+      "reversible": 0
+    },
+    {
+      "default_selected": 1,
+      "needs_admin": 0,
+      "risk": "safe",
+      "status": "allowed",
+      "task_id": "quickLookCache",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "forbidden",
+      "status": "forbidden",
+      "task_id": "rebuildLaunchServicesKill",
+      "reversible": 0
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 1,
+      "risk": "disruptive",
+      "status": "allowed",
+      "task_id": "reindexSpotlight",
+      "reversible": 0
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "disruptive",
+      "status": "allowed",
+      "task_id": "restartAppleInputMethod",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "disruptive",
+      "status": "allowed",
+      "task_id": "restartDock",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "disruptive",
+      "status": "allowed",
+      "task_id": "restartFinder",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "safe",
+      "status": "allowed",
+      "task_id": "savedStateCleanup",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 1,
+      "risk": "caution",
+      "status": "allowed",
+      "task_id": "thinTimeMachine",
+      "reversible": 0
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "caution",
+      "status": "disabled",
+      "task_id": "vacuumDatabases",
+      "reversible": 0
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "forbidden",
+      "status": "forbidden",
+      "task_id": "writeFileToPurge",
+      "reversible": 0
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "disruptive",
+      "status": "allowed",
+      "task_id": "fixInputMethod",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "disruptive",
+      "status": "allowed",
+      "task_id": "fixNotificationCenter",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "disruptive",
+      "status": "allowed",
+      "task_id": "fixClipboardHandoff",
+      "reversible": 1
+    },
+    {
+      "default_selected": 0,
+      "needs_admin": 0,
+      "risk": "disruptive",
+      "status": "allowed",
+      "task_id": "fixFinderDock",
+      "reversible": 1
+    }
+  ],
+  "predicates": [
+    "",
+    "app_not_running",
+    "browser_not_running AND profile_split",
+    "browser_not_running",
+    "workspace_path_missing AND xcode_not_running",
+    "workspace_path_exists OR plist_missing",
+    "xcode_not_running",
+    "not_latest_per_platform",
+    "latest_per_platform",
+    "daemon_not_running",
+    "not_downloads_subdir",
+    "direct_child_of_user_caches AND NOT protected",
+    "container_or_group_caches_child AND NOT apple_private",
+    "one_row_per_model",
+    "orphan_app_uninstalled_and_volatile_root",
+    "plutil_lint_failed AND not_in_use",
+    "manifest_and_git_and_sensitive_ok AND cwd_not_inside AND stale_by_git",
+    "wechat_not_running",
+    "premiere_or_ae_not_running",
+    "confstr_user_temp AND regular_file AND no_open_handle",
+    "confstr_user_cache AND regular_file AND no_open_handle",
+    "normalized_name_matches_installed_app",
+    "not_installed OR younger_than_7d",
+    "not_open",
+    "state_ready AND deletable AND no_booted_device"
+  ],
+  "preservedClientArrays": {
+    "blockedLibPrefixes": [
+      "mail",
+      "messages",
+      "safari",
+      "homekit",
+      "identityservices",
+      "personalizationportrait",
+      "biome",
+      "intelligenceplatform",
+      "trial",
+      "accounts",
+      "suggestions",
+      "sharing",
+      "calendars",
+      "contacts",
+      "metadata/corespotlight",
+      "autosave information",
+      "statuskit",
+      "donotdisturb",
+      "application support/addressbook",
+      "application support/callhistorydb",
+      "application support/callhistorytransactions",
+      "application support/com.apple.tcc",
+      "application support/knowledge",
+      "application support/clouddocs",
+      "application support/fileprovider"
+    ],
+    "browserStateNames": [
+      "cookies",
+      "cookies-journal",
+      "login data",
+      "login data-journal",
+      "web data",
+      "history",
+      "history-journal",
+      "bookmarks",
+      "bookmarks.bak",
+      "local storage",
+      "session storage",
+      "indexeddb",
+      "webstorage",
+      "local state",
+      "preferences",
+      "secure preferences",
+      "extension state",
+      "extensions",
+      "key4.db",
+      "places.sqlite",
+      "logins.json"
+    ],
+    "cloudPathMarkers": [
+      "fileprovider",
+      "clouddocs",
+      "mobile documents",
+      "onedrive",
+      "dropbox",
+      "google drive",
+      "cloudstorage",
+      "nutstore",
+      "baidunetdisk",
+      "com.apple.bird",
+      "com.apple.cloudd"
+    ],
+    "credentialDirectories": [
+      ".ssh",
+      ".gnupg",
+      ".gpg",
+      ".aws",
+      ".kube",
+      ".aliyun",
+      ".tccli",
+      ".password-store"
+    ],
+    "credentialNames": [
+      ".npmrc",
+      ".pypirc",
+      ".netrc",
+      ".gitconfig",
+      ".git-credentials",
+      ".zshrc",
+      ".bashrc",
+      ".profile",
+      ".zsh_history",
+      ".bash_history",
+      "credentials",
+      "credentials.json",
+      "token",
+      "tokens.json"
+    ],
+    "criticalHomeDirectories": [
+      "Documents",
+      "Desktop",
+      "Downloads",
+      "Pictures",
+      "Movies",
+      "Music",
+      "Library",
+      "Library/Application Support",
+      "Library/Containers",
+      "Library/Group Containers",
+      "Library/Preferences",
+      "Library/Keychains",
+      "Library/Mail",
+      "Library/Messages",
+      "Library/Safari",
+      "Library/Mobile Documents",
+      "Library/Accounts",
+      "Library/Calendars"
+    ],
+    "criticalSystemProcesses": [
+      "kernel_task",
+      "launchd",
+      "WindowServer",
+      "loginwindow",
+      "Finder",
+      "Dock",
+      "syspolicyd",
+      "opendirectoryd",
+      "trustd",
+      "securityd",
+      "coreauthd",
+      "tccd",
+      "containermanagerd",
+      "diskarbitrationd",
+      "fseventsd",
+      "kextd",
+      "powerd",
+      "systemsoundserverd",
+      "ControlCenter",
+      "SystemSettings",
+      "NotificationCenter",
+      "AClean",
+      "CleanMate",
+      "ACleaner"
+    ],
+    "exactSensitiveNames": [
+      "id_rsa",
+      "id_ed25519",
+      "id_ecdsa",
+      "id_dsa",
+      ".env",
+      ".env.local",
+      ".env.production",
+      "credentials.json"
+    ],
+    "forbiddenDbMarkers": [
+      "/Library/Mail",
+      "/Library/Safari",
+      "/Library/Keychains",
+      "/Library/Accounts",
+      "/Library/Photos",
+      "/Library/Messages"
+    ],
+    "passwordStoreNames": [
+      "1password",
+      "agilebits",
+      "bitwarden",
+      "keepassxc",
+      "lastpass",
+      "dashlane"
+    ],
+    "protectedBundleIDs": [
+      "com.apple.Settings",
+      "com.apple.SystemSettings",
+      "com.apple.controlcenter",
+      "com.apple.systempreferences",
+      "com.apple.Safari.SafeBrowsing",
+      "com.apple.security",
+      "com.apple.keychain",
+      "com.apple.Passwords",
+      "com.apple.MobileBackup",
+      "com.apple.bird",
+      "com.apple.cloudd",
+      "com.apple.icloud",
+      "com.apple.Music",
+      "com.apple.HomeKit",
+      "com.apple.finder",
+      "com.apple.dock",
+      "com.apple.loginwindow",
+      "com.apple.Spotlight",
+      "com.apple.notificationcenterui",
+      "com.apple.FontRegistry",
+      "com.apple.IconServices"
+    ],
+    "protectedPathMarkers": [
+      "com.apple.Settings",
+      "com.apple.controlcenter",
+      "com.apple.e5rt.e5bundlecache",
+      "Library/Keychains",
+      "Library/Accounts",
+      "Library/Mobile Documents",
+      "CrashReporter/Retired",
+      ".orbstack/data",
+      "Docker.raw",
+      "Docker.qcow2",
+      "com.apple.passwordmanager.json",
+      "Steam/steamapps/common",
+      ".android/avd",
+      "debug.keystore",
+      "adbkey",
+      "InputMethod",
+      "Input Methods",
+      ".cocoapods/repos"
+    ],
+    "protectedSubtreeRoots": [
+      "/System",
+      "/usr",
+      "/bin",
+      "/sbin",
+      "/etc",
+      "/private/etc",
+      "/private/var/root",
+      "/private/var/db",
+      "/var/root",
+      "/var/db"
+    ],
+    "sensitiveExtensions": [
+      "key",
+      "pem",
+      "p12",
+      "pfx",
+      "keystore",
+      "jks"
+    ],
+    "sessionPathMarkers": [
+      "/library/httpstorages/",
+      "/library/webkit/",
+      "/library/cookies/",
+      "/saved application state/"
+    ],
+    "tccCachesExact": [
+      "cloudkit",
+      "familycircle",
+      "passkit",
+      "gamekit",
+      "geoservices",
+      "animoji",
+      "temporaryitems",
+      "askpermissiond",
+      "familycircled"
+    ]
+  },
+  "projectBounds": {
+    "dotNetProjectExtensions": [
+      "csproj",
+      "fsproj",
+      "vbproj"
+    ],
+    "keepGitAndTerraformGuards": true,
+    "maximumManifestSearchDepth": 3,
+    "maximumScanDepth": 4,
+    "minimumAgeDays": 7,
+    "rejectGameProjects": true
+  },
+  "requiredConditions": {
+    "JC.AI.GEMINI.TMP": "",
+    "JC.AI.HF.MODEL": "one_row_per_model",
+    "JC.AI.IDE.CACHE": "app_not_running",
+    "JC.AI.LMSTUDIO": "one_row_per_model",
+    "JC.AI.OLDVERSION": "",
+    "JC.AI.OLLAMA.MODEL": "referenced_by_manifest",
+    "JC.AI.OLLAMA.ORPHAN": "blob_refcount_zero",
+    "JC.AI.TOOL.CACHE": "",
+    "JC.AI.WORKTREE": "worktree_list_missing AND no_process",
+    "JC.APP.LARK.CACHE": "",
+    "JC.BRW.ARC.CACHE": "browser_not_running AND profile_split",
+    "JC.BRW.AUTOMATION.CACHE": "",
+    "JC.BRW.CHROMIUM.CACHE": "browser_not_running AND profile_split",
+    "JC.BRW.CHROMIUM.SW": "browser_not_running",
+    "JC.BRW.FIREFOX.CACHE": "browser_not_running",
+    "JC.BRW.SAFARI": "",
+    "JC.BRW.SAFARI.CACHE": "browser_not_running",
+    "JC.CACHE.CONTAINER": "container_or_group_caches_child AND NOT apple_private",
+    "JC.CACHE.USER": "direct_child_of_user_caches AND NOT protected",
+    "JC.DEV.BREW.CACHE": "not_downloads_subdir",
+    "JC.DEV.BREW.DOWNLOADS": "",
+    "JC.DEV.BROWSER.DOWNLOAD": "",
+    "JC.DEV.GRADLE.DAEMON": "daemon_not_running",
+    "JC.DEV.JETBRAINS.CACHE": "app_not_running",
+    "JC.DEV.NPM.CACACHE": "",
+    "JC.DEV.NPM.LOGS": "",
+    "JC.DEV.PKG.L2": "",
+    "JC.DEV.PKG.SAFE": "",
+    "JC.DEV.PKG.UNVERIFIED": "",
+    "JC.DEV.PROJECT": "manifest_and_git_and_sensitive_ok AND cwd_not_inside AND stale_by_git",
+    "JC.DEV.PUB.ASSET": "",
+    "JC.DEV.SIMCTL.RUNTIME": "state_ready AND deletable AND no_booted_device",
+    "JC.DEV.XCODE.ARCHIVES": "xcode_not_running",
+    "JC.DEV.XCODE.CACHE": "",
+    "JC.DEV.XCODE.DERIVED.LIVE": "workspace_path_exists OR plist_missing",
+    "JC.DEV.XCODE.DERIVED.ORPHAN": "workspace_path_missing AND xcode_not_running",
+    "JC.DEV.XCODE.DEVICESUPPORT": "not_latest_per_platform",
+    "JC.DEV.XCODE.DEVICESUPPORT.LATEST": "latest_per_platform",
+    "JC.DEV.XCODE.SIMULATOR": "",
+    "JC.DEV.XCODE.SYSTEM.CACHE": "",
+    "JC.DSG.ADOBE.CACHE": "app_not_running",
+    "JC.DSG.ADOBE.MEDIACACHE": "premiere_or_ae_not_running",
+    "JC.DSG.FCP": "",
+    "JC.DSG.JIANYING.CACHE": "",
+    "JC.ELECTRON.CACHE": "app_not_running",
+    "JC.ELECTRON.SW": "app_not_running",
+    "JC.IM.MEET": "app_not_running",
+    "JC.IM.QQ": "",
+    "JC.IM.TELEGRAM.MEDIA": "",
+    "JC.IM.WECHAT.CACHE": "wechat_not_running",
+    "JC.IM.WECHAT.MEDIA": "",
+    "JC.IM.WECOM": "",
+    "JC.LEFTOVER.ORPHAN": "orphan_app_uninstalled_and_volatile_root",
+    "JC.LOG.DIAG.USER": "",
+    "JC.LOG.USER": "",
+    "JC.MEDIA.NETEASE.CACHE": "",
+    "JC.MEDIA.SPOTIFY": "app_not_running",
+    "JC.MEDIA.SPOTIFY.CACHE": "",
+    "JC.SYS.APPSTORE.CACHE": "app_not_running",
+    "JC.SYS.CACHE.DARWIN": "confstr_user_cache AND regular_file AND no_open_handle",
+    "JC.SYS.DMG.INSTALLED": "normalized_name_matches_installed_app",
+    "JC.SYS.DMG.OTHER": "not_installed OR younger_than_7d",
+    "JC.SYS.IOS.BACKUP": "not_latest_backup",
+    "JC.SYS.IPSW": "not_open",
+    "JC.SYS.MAIL": "",
+    "JC.SYS.PLIST.BROKEN": "plutil_lint_failed AND not_in_use",
+    "JC.SYS.QUARANTINE": "",
+    "JC.SYS.SAVEDSTATE": "",
+    "JC.SYS.TMP.DARWIN": "confstr_user_temp AND regular_file AND no_open_handle",
+    "JC.SYS.VARLOG": ""
+  },
+  "requiredExclusions": [
+    {
+      "name": "User/workspaceStorage",
+      "rule_id": "JC.ELECTRON.CACHE"
+    },
+    {
+      "name": "User/globalStorage",
+      "rule_id": "JC.ELECTRON.CACHE"
+    },
+    {
+      "name": "mcp.json",
+      "rule_id": "JC.ELECTRON.CACHE"
+    },
+    {
+      "name": "IndexedDB",
+      "rule_id": "JC.ELECTRON.CACHE"
+    },
+    {
+      "name": "Local Storage",
+      "rule_id": "JC.ELECTRON.CACHE"
+    },
+    {
+      "name": "places.sqlite",
+      "rule_id": "JC.BRW.FIREFOX.CACHE"
+    },
+    {
+      "name": "MM.sqlite",
+      "rule_id": "JC.IM.WECHAT.MEDIA"
+    },
+    {
+      "name": "WCDB_Contact.sqlite",
+      "rule_id": "JC.IM.WECHAT.MEDIA"
+    },
+    {
+      "name": "ChatPackage",
+      "rule_id": "JC.IM.WECHAT.MEDIA"
+    },
+    {
+      "name": "postbox/db",
+      "rule_id": "JC.IM.TELEGRAM.MEDIA"
+    },
+    {
+      "name": "~/Documents/Zoom",
+      "rule_id": "JC.IM.MEET"
+    },
+    {
+      "name": "~/Documents/WeMeet",
+      "rule_id": "JC.IM.MEET"
+    },
+    {
+      "name": "User/workspaceStorage",
+      "rule_id": "JC.AI.IDE.CACHE"
+    },
+    {
+      "name": "User/globalStorage",
+      "rule_id": "JC.AI.IDE.CACHE"
+    },
+    {
+      "name": "mcp.json",
+      "rule_id": "JC.AI.IDE.CACHE"
+    },
+    {
+      "name": "IndexedDB",
+      "rule_id": "JC.AI.IDE.CACHE"
+    },
+    {
+      "name": "Local Storage",
+      "rule_id": "JC.AI.IDE.CACHE"
+    },
+    {
+      "name": "token",
+      "rule_id": "JC.AI.HF.MODEL"
+    },
+    {
+      "name": "ModuleCache.noindex",
+      "rule_id": "JC.DEV.XCODE.DERIVED.ORPHAN"
+    },
+    {
+      "name": "downloads",
+      "rule_id": "JC.DEV.BREW.CACHE"
+    },
+    {
+      "name": "com.apple.",
+      "rule_id": "JC.SYS.PLIST.BROKEN"
+    },
+    {
+      "name": "JetBrains",
+      "rule_id": "JC.CACHE.USER"
+    }
+  ],
+  "requiredGlobalGuards": [
+    {
+      "kind": "protected_bundle",
+      "value": "com.apple.dock"
+    },
+    {
+      "kind": "protected_bundle",
+      "value": "com.apple.finder"
+    },
+    {
+      "kind": "protected_bundle",
+      "value": "com.apple.loginwindow"
+    },
+    {
+      "kind": "protected_bundle",
+      "value": "com.apple.systemuiserver"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/Applications"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/Library"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/Library/Caches"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/Library/Logs"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/System"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/Volumes"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/bin"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/cores"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/opt"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/sbin"
+    },
+    {
+      "kind": "protected_path",
+      "value": "/usr"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/.aws"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/.gnupg"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/.ssh"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Desktop"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Documents"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Downloads"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Library"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Library/Application Support"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Library/Caches"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Library/Containers"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Library/Developer"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Library/Group Containers"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Library/Keychains"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Library/Logs"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Library/Mail"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Library/Messages"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Movies"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Music"
+    },
+    {
+      "kind": "protected_path",
+      "value": "~/Pictures"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/Applications"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/Library"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/Library/Caches"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/Library/Logs"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/System"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/Volumes"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/bin"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/cores"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/opt"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/sbin"
+    },
+    {
+      "kind": "protected_root",
+      "value": "/usr"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Desktop"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Documents"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Downloads"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Library"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Library/Application Support"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Library/Caches"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Library/Containers"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Library/Developer"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Library/Group Containers"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Library/Logs"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Movies"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Music"
+    },
+    {
+      "kind": "protected_root",
+      "value": "~/Pictures"
+    }
+  ],
+  "requiredProfileLocks": [
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.google.Chrome",
+      "profile_id": "chrome"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "org.chromium.Chromium",
+      "profile_id": "chromium"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.brave.Browser",
+      "profile_id": "brave"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.microsoft.edgemac",
+      "profile_id": "edge"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.vivaldi.Vivaldi",
+      "profile_id": "vivaldi"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.operasoftware.Opera",
+      "profile_id": "opera"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "company.thebrowser.Browser",
+      "profile_id": "arc"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.google.Chrome",
+      "profile_id": "chrome-cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "company.thebrowser.Browser",
+      "profile_id": "arc-cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "company.thebrowser.Browser",
+      "profile_id": "arc-bundle-cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "org.mozilla.firefox",
+      "profile_id": "firefox"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.microsoft.VSCode",
+      "profile_id": "electron-Code"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.todesktop.230313mzl4w4u92",
+      "profile_id": "electron-Cursor"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.codeium.windsurf",
+      "profile_id": "electron-Windsurf"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.exafunction.windsurf",
+      "profile_id": "electron-Windsurf"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.google.antigravity",
+      "profile_id": "electron-Antigravity"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.anthropic.claudefordesktop",
+      "profile_id": "electron-Claude"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.electron.lark",
+      "profile_id": "electron-LarkShell"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.bytedance.feishu",
+      "profile_id": "electron-LarkShell"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "notion.id",
+      "profile_id": "electron-Notion"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.tinyspeck.slackmacgap",
+      "profile_id": "electron-Slack"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.hnc.Discord",
+      "profile_id": "electron-discord"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.figma.Desktop",
+      "profile_id": "electron-Figma"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.insomnia.app",
+      "profile_id": "electron-Insomnia"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.linear",
+      "profile_id": "electron-Linear"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.postmanlabs.mac",
+      "profile_id": "electron-Postman"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.tencent.CherryStudio",
+      "profile_id": "electron-CherryStudio"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "md.obsidian",
+      "profile_id": "electron-obsidian"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "node",
+      "profile_id": "npm-download"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "npm",
+      "profile_id": "npm-download"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "npx",
+      "profile_id": "npm-download"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "pnpm",
+      "profile_id": "npm-download"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "yarn",
+      "profile_id": "npm-download"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "brew",
+      "profile_id": "brew-download"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "python",
+      "profile_id": "pip-macos"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "python3",
+      "profile_id": "pip-macos"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "pip",
+      "profile_id": "pip-macos"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "pip3",
+      "profile_id": "pip-macos"
+    },
+    {
+      "lock_kind": "process_family",
+      "lock_value": "python3Versioned",
+      "profile_id": "pip-macos"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "python",
+      "profile_id": "pip-xdg"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "python3",
+      "profile_id": "pip-xdg"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "pip",
+      "profile_id": "pip-xdg"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "pip3",
+      "profile_id": "pip-xdg"
+    },
+    {
+      "lock_kind": "process_family",
+      "lock_value": "python3Versioned",
+      "profile_id": "pip-xdg"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "bun",
+      "profile_id": "bun-download"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "node",
+      "profile_id": "bun-download"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "cargo",
+      "profile_id": "cargo-archive"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "rustc",
+      "profile_id": "cargo-archive"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "rustup",
+      "profile_id": "cargo-archive"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "go",
+      "profile_id": "go-build-macos"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "compile",
+      "profile_id": "go-build-macos"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "link",
+      "profile_id": "go-build-macos"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "gopls",
+      "profile_id": "go-build-macos"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "go",
+      "profile_id": "go-build-xdg"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "compile",
+      "profile_id": "go-build-xdg"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "link",
+      "profile_id": "go-build-xdg"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "gopls",
+      "profile_id": "go-build-xdg"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "xcodebuild",
+      "profile_id": "xcode-modules"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift",
+      "profile_id": "xcode-modules"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift-frontend",
+      "profile_id": "xcode-modules"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang",
+      "profile_id": "xcode-modules"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang++",
+      "profile_id": "xcode-modules"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "ibtool",
+      "profile_id": "xcode-modules"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.apple.dt.Xcode",
+      "profile_id": "xcode-modules"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "xcodebuild",
+      "profile_id": "xcode-derived-live"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift",
+      "profile_id": "xcode-derived-live"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift-frontend",
+      "profile_id": "xcode-derived-live"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang",
+      "profile_id": "xcode-derived-live"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang++",
+      "profile_id": "xcode-derived-live"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "ibtool",
+      "profile_id": "xcode-derived-live"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.apple.dt.Xcode",
+      "profile_id": "xcode-derived-live"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "xcodebuild",
+      "profile_id": "xcode-derived-orphan"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift",
+      "profile_id": "xcode-derived-orphan"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift-frontend",
+      "profile_id": "xcode-derived-orphan"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang",
+      "profile_id": "xcode-derived-orphan"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang++",
+      "profile_id": "xcode-derived-orphan"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "ibtool",
+      "profile_id": "xcode-derived-orphan"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.apple.dt.Xcode",
+      "profile_id": "xcode-derived-orphan"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "JianyingPro",
+      "profile_id": "jianying-audioWave"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "JianyingPro",
+      "profile_id": "jianying-recognize"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "JianyingPro",
+      "profile_id": "jianying-frameThumbnail"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "chrome",
+      "profile_id": "devtools-http"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "chrome",
+      "profile_id": "playwright-mcp-http"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.bytedance.feishu",
+      "profile_id": "lark-aha-profile_all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.electron.lark",
+      "profile_id": "lark-aha-profile_all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.larksuite.feishu.ka.kywl.lark",
+      "profile_id": "lark-aha-profile_all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.bytedance.feishu",
+      "profile_id": "lark-aha-profile_all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.electron.lark",
+      "profile_id": "lark-aha-profile_all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.larksuite.feishu.ka.kywl.lark",
+      "profile_id": "lark-aha-profile_all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.bytedance.feishu",
+      "profile_id": "lark-aha-PartitionsV2-all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.electron.lark",
+      "profile_id": "lark-aha-PartitionsV2-all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.larksuite.feishu.ka.kywl.lark",
+      "profile_id": "lark-aha-PartitionsV2-all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.bytedance.feishu",
+      "profile_id": "lark-aha-PartitionsV2-all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.electron.lark",
+      "profile_id": "lark-aha-PartitionsV2-all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.larksuite.feishu.ka.kywl.lark",
+      "profile_id": "lark-aha-PartitionsV2-all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.bytedance.feishu",
+      "profile_id": "lark-iron-profile_all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.electron.lark",
+      "profile_id": "lark-iron-profile_all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.larksuite.feishu.ka.kywl.lark",
+      "profile_id": "lark-iron-profile_all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.bytedance.feishu",
+      "profile_id": "lark-iron-profile_all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.electron.lark",
+      "profile_id": "lark-iron-profile_all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.larksuite.feishu.ka.kywl.lark",
+      "profile_id": "lark-iron-profile_all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.bytedance.feishu",
+      "profile_id": "lark-iron-PartitionsV2-all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.electron.lark",
+      "profile_id": "lark-iron-PartitionsV2-all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.larksuite.feishu.ka.kywl.lark",
+      "profile_id": "lark-iron-PartitionsV2-all-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.bytedance.feishu",
+      "profile_id": "lark-iron-PartitionsV2-all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.electron.lark",
+      "profile_id": "lark-iron-PartitionsV2-all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.larksuite.feishu.ka.kywl.lark",
+      "profile_id": "lark-iron-PartitionsV2-all-Code-Cache"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.netease.163music",
+      "profile_id": "netease-online"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.todesktop.230313mzl4w4u92",
+      "profile_id": "cursor-vsix"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.microsoft.VSCode",
+      "profile_id": "code-vsix"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "GradleDaemon",
+      "profile_id": "gradle-build-cache-1"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "Adobe Premiere Pro",
+      "profile_id": "adobe-Media-Cache"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "Adobe Premiere Pro",
+      "profile_id": "adobe-Media-Cache-Files"
+    }
+  ],
+  "requiredProtectedPaths": [
+    {
+      "id": "CRED.AWS",
+      "match_kind": "prefix",
+      "path_template": "~/.aws",
+      "reason": "credential"
+    },
+    {
+      "id": "CRED.BASH_HISTORY",
+      "match_kind": "exact",
+      "path_template": "~/.bash_history",
+      "reason": "credential"
+    },
+    {
+      "id": "CRED.DOCKER",
+      "match_kind": "exact",
+      "path_template": "~/.docker/config.json",
+      "reason": "credential"
+    },
+    {
+      "id": "CRED.GITCONFIG",
+      "match_kind": "exact",
+      "path_template": "~/.gitconfig",
+      "reason": "credential"
+    },
+    {
+      "id": "CRED.GNUPG",
+      "match_kind": "prefix",
+      "path_template": "~/.gnupg",
+      "reason": "credential"
+    },
+    {
+      "id": "CRED.HF_TOKEN",
+      "match_kind": "exact",
+      "path_template": "~/.cache/huggingface/token",
+      "reason": "credential"
+    },
+    {
+      "id": "CRED.KUBE",
+      "match_kind": "prefix",
+      "path_template": "~/.kube",
+      "reason": "credential"
+    },
+    {
+      "id": "CRED.NETRC",
+      "match_kind": "exact",
+      "path_template": "~/.netrc",
+      "reason": "credential"
+    },
+    {
+      "id": "CRED.NPMRC",
+      "match_kind": "exact",
+      "path_template": "~/.npmrc",
+      "reason": "credential"
+    },
+    {
+      "id": "CRED.SSH",
+      "match_kind": "prefix",
+      "path_template": "~/.ssh",
+      "reason": "credential"
+    },
+    {
+      "id": "CRED.ZSH_HISTORY",
+      "match_kind": "exact",
+      "path_template": "~/.zsh_history",
+      "reason": "credential"
+    },
+    {
+      "id": "DENY.ANDR_ADBKEY",
+      "match_kind": "marker",
+      "path_template": "adbkey",
+      "reason": "dev_keystore"
+    },
+    {
+      "id": "DENY.ANDR_AVD",
+      "match_kind": "marker",
+      "path_template": ".android/avd",
+      "reason": "android_vm"
+    },
+    {
+      "id": "DENY.ANDR_KEYSTORE",
+      "match_kind": "marker",
+      "path_template": "debug.keystore",
+      "reason": "dev_keystore"
+    },
+    {
+      "id": "DENY.APP_INTERIOR",
+      "match_kind": "marker",
+      "path_template": ".app/",
+      "reason": "code_signature"
+    },
+    {
+      "id": "DENY.BINARYCOOKIES",
+      "match_kind": "suffix",
+      "path_template": ".binarycookies",
+      "reason": "dna_session"
+    },
+    {
+      "id": "DENY.BOOKMARKS",
+      "match_kind": "marker",
+      "path_template": "Bookmarks",
+      "reason": "dna_session"
+    },
+    {
+      "id": "DENY.CLAUDE_LOCAL_VERSIONS",
+      "match_kind": "prefix",
+      "path_template": "~/.local/share/claude/versions",
+      "reason": "ai_cli_binary"
+    },
+    {
+      "id": "DENY.CLAUDE_MCP_AUTH_STATE",
+      "match_kind": "exact",
+      "path_template": "~/.claude/mcp-needs-auth-cache.json",
+      "reason": "ai_cli_state"
+    },
+    {
+      "id": "DENY.CLAUDE_PLUGIN_STATE",
+      "match_kind": "exact",
+      "path_template": "~/.claude/plugins/install-counts-cache.json",
+      "reason": "ai_cli_state"
+    },
+    {
+      "id": "DENY.CLAUDE_STATS_STATE",
+      "match_kind": "exact",
+      "path_template": "~/.claude/stats-cache.json",
+      "reason": "ai_cli_state"
+    },
+    {
+      "id": "DENY.CLAUDE_VERSIONS",
+      "match_kind": "prefix",
+      "path_template": "~/.claude/versions",
+      "reason": "ai_cli_binary"
+    },
+    {
+      "id": "DENY.COCOAPODS_REPOS",
+      "match_kind": "prefix",
+      "path_template": "~/.cocoapods/repos",
+      "reason": "cocoapods_repo"
+    },
+    {
+      "id": "DENY.COOKIES",
+      "match_kind": "marker",
+      "path_template": "Cookies",
+      "reason": "dna_session"
+    },
+    {
+      "id": "DENY.CURSOR_EXT",
+      "match_kind": "prefix",
+      "path_template": "~/.cursor/extensions",
+      "reason": "ide_extensions"
+    },
+    {
+      "id": "DENY.EAGLE",
+      "match_kind": "suffix",
+      "path_template": ".library",
+      "reason": "eagle_library"
+    },
+    {
+      "id": "DENY.HISTORY",
+      "match_kind": "marker",
+      "path_template": "History",
+      "reason": "dna_session"
+    },
+    {
+      "id": "DENY.IME_INPUTMETHOD",
+      "match_kind": "marker",
+      "path_template": "InputMethod",
+      "reason": "ime_user_dict"
+    },
+    {
+      "id": "DENY.IME_INPUTMETHODS",
+      "match_kind": "marker",
+      "path_template": "Input Methods",
+      "reason": "ime_user_dict"
+    },
+    {
+      "id": "DENY.INDEXEDDB",
+      "match_kind": "marker",
+      "path_template": "IndexedDB",
+      "reason": "dna_session"
+    },
+    {
+      "id": "DENY.JIANYING_DRAFT",
+      "match_kind": "marker",
+      "path_template": "com.lveditor.draft",
+      "reason": "jianying_draft"
+    },
+    {
+      "id": "DENY.KEYCHAIN_PW_EXT",
+      "match_kind": "marker",
+      "path_template": "com.apple.passwordmanager.json",
+      "reason": "keychain_ext"
+    },
+    {
+      "id": "DENY.LOCAL_STORAGE",
+      "match_kind": "marker",
+      "path_template": "Local Storage",
+      "reason": "dna_session"
+    },
+    {
+      "id": "DENY.LOGIN_DATA",
+      "match_kind": "marker",
+      "path_template": "Login Data",
+      "reason": "dna_session"
+    },
+    {
+      "id": "DENY.LPROJ",
+      "match_kind": "suffix",
+      "path_template": ".lproj",
+      "reason": "code_signature"
+    },
+    {
+      "id": "DENY.STEAM_COMMON",
+      "match_kind": "marker",
+      "path_template": "Steam/steamapps/common",
+      "reason": "steam_library"
+    },
+    {
+      "id": "DENY.SYSTEM",
+      "match_kind": "prefix",
+      "path_template": "/System",
+      "reason": "system"
+    },
+    {
+      "id": "DENY.VM_PVM",
+      "match_kind": "suffix",
+      "path_template": ".pvm",
+      "reason": "vm_disk"
+    },
+    {
+      "id": "DENY.VM_VMWARE",
+      "match_kind": "suffix",
+      "path_template": ".vmwarevm",
+      "reason": "vm_disk"
+    },
+    {
+      "id": "DENY.VSCODE_EXT",
+      "match_kind": "marker",
+      "path_template": "**/.vscode/extensions",
+      "reason": "ide_extensions"
+    },
+    {
+      "id": "DENY.WEB_DATA",
+      "match_kind": "marker",
+      "path_template": "Web Data",
+      "reason": "dna_session"
+    },
+    {
+      "id": "DENY.WINDSURF_EXT",
+      "match_kind": "marker",
+      "path_template": "**/.windsurf/extensions",
+      "reason": "ide_extensions"
+    },
+    {
+      "id": "DNA.CLOUD.CLOUDSTORAGE",
+      "match_kind": "prefix",
+      "path_template": "~/Library/CloudStorage",
+      "reason": "dna_cloud"
+    },
+    {
+      "id": "DNA.CLOUD.DROPBOX",
+      "match_kind": "prefix",
+      "path_template": "~/Dropbox",
+      "reason": "dna_cloud"
+    },
+    {
+      "id": "DNA.CLOUD.FILEPROVIDER",
+      "match_kind": "prefix",
+      "path_template": "~/Library/Application Support/FileProvider",
+      "reason": "dna_cloud"
+    },
+    {
+      "id": "DNA.CLOUD.MOBILE_DOCS",
+      "match_kind": "prefix",
+      "path_template": "~/Library/Mobile Documents",
+      "reason": "dna_cloud"
+    },
+    {
+      "id": "DNA.CLOUD.ONEDRIVE",
+      "match_kind": "prefix",
+      "path_template": "~/OneDrive",
+      "reason": "dna_cloud"
+    },
+    {
+      "id": "DNA.KEYCHAIN",
+      "match_kind": "prefix",
+      "path_template": "~/Library/Keychains",
+      "reason": "credential"
+    },
+    {
+      "id": "DNA.MAIL.APPLE",
+      "match_kind": "prefix",
+      "path_template": "~/Library/Containers/com.apple.mail",
+      "reason": "dna_mail"
+    },
+    {
+      "id": "DNA.MAIL.DOWNLOADS",
+      "match_kind": "marker",
+      "path_template": "Mail Downloads",
+      "reason": "dna_mail"
+    },
+    {
+      "id": "DNA.MAIL.MAILDIR",
+      "match_kind": "prefix",
+      "path_template": "~/Library/Mail",
+      "reason": "dna_mail"
+    },
+    {
+      "id": "DNA.PHOTOS",
+      "match_kind": "suffix",
+      "path_template": ".photoslibrary",
+      "reason": "photos"
+    },
+    {
+      "id": "DNA.TCC",
+      "match_kind": "marker",
+      "path_template": "com.apple.TCC/TCC.db",
+      "reason": "tcc"
+    },
+    {
+      "id": "JUNK.JETBRAINS.LOCAL_HISTORY",
+      "match_kind": "suffix",
+      "path_template": "/LocalHistory",
+      "reason": "user_local_history"
+    },
+    {
+      "id": "JUNK.PUB.ASSET",
+      "match_kind": "prefix",
+      "path_template": "~/.pub-cache",
+      "reason": "user_installed_tools"
+    },
+    {
+      "id": "JUNK.SPOTIFY.CACHE",
+      "match_kind": "prefix",
+      "path_template": "~/Library/Caches/com.spotify.client",
+      "reason": "offline_assets"
+    },
+    {
+      "id": "JUNK.SPOTIFY.STORAGE",
+      "match_kind": "prefix",
+      "path_template": "~/Library/Application Support/Spotify/PersistentCache/Storage",
+      "reason": "offline_assets"
+    },
+    {
+      "id": "ROOT.CACHE",
+      "match_kind": "exact",
+      "path_template": "~/.cache",
+      "reason": "config_root"
+    },
+    {
+      "id": "ROOT.CONFIG",
+      "match_kind": "exact",
+      "path_template": "~/.config",
+      "reason": "config_root"
+    },
+    {
+      "id": "ROOT.LOCAL",
+      "match_kind": "exact",
+      "path_template": "~/.local",
+      "reason": "config_root"
+    }
+  ],
+  "requiredRuleLocks": [
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.google.Chrome",
+      "rule_id": "JC.BRW.CHROMIUM.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.brave.Browser",
+      "rule_id": "JC.BRW.CHROMIUM.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.microsoft.edgemac",
+      "rule_id": "JC.BRW.CHROMIUM.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.vivaldi.Vivaldi",
+      "rule_id": "JC.BRW.CHROMIUM.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.operasoftware.Opera",
+      "rule_id": "JC.BRW.CHROMIUM.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "org.chromium.Chromium",
+      "rule_id": "JC.BRW.CHROMIUM.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.google.Chrome",
+      "rule_id": "JC.BRW.CHROMIUM.SW"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.apple.Safari",
+      "rule_id": "JC.BRW.SAFARI.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "org.mozilla.firefox",
+      "rule_id": "JC.BRW.FIREFOX.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "company.thebrowser.Browser",
+      "rule_id": "JC.BRW.ARC.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "{bundleID}",
+      "rule_id": "JC.ELECTRON.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "{bundleID}",
+      "rule_id": "JC.AI.IDE.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.tencent.xinWeChat",
+      "rule_id": "JC.IM.WECHAT.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.tencent.xinWeChat",
+      "rule_id": "JC.IM.WECHAT.MEDIA"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "ru.keepcoder.Telegram",
+      "rule_id": "JC.IM.TELEGRAM.MEDIA"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "org.telegram.desktop",
+      "rule_id": "JC.IM.TELEGRAM.MEDIA"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.tencent.meeting",
+      "rule_id": "JC.IM.MEET"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "us.zoom.xos",
+      "rule_id": "JC.IM.MEET"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.spotify.client",
+      "rule_id": "JC.MEDIA.SPOTIFY"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.apple.dt.Xcode",
+      "rule_id": "JC.DEV.XCODE.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.apple.dt.Xcode",
+      "rule_id": "JC.DEV.XCODE.DERIVED.ORPHAN"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.apple.dt.Xcode",
+      "rule_id": "JC.DEV.XCODE.DERIVED.LIVE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.apple.dt.Xcode",
+      "rule_id": "JC.DEV.XCODE.ARCHIVES"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "Adobe Premiere Pro",
+      "rule_id": "JC.DSG.ADOBE.MEDIACACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "Adobe After Effects",
+      "rule_id": "JC.DSG.ADOBE.MEDIACACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "GradleDaemon",
+      "rule_id": "JC.DEV.GRADLE.DAEMON"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "brew",
+      "rule_id": "JC.DEV.BREW.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "brew",
+      "rule_id": "JC.DEV.BREW.DOWNLOADS"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "npm",
+      "rule_id": "JC.DEV.NPM.CACACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "pnpm",
+      "rule_id": "JC.DEV.NPM.CACACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "yarn",
+      "rule_id": "JC.DEV.NPM.CACACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "node",
+      "rule_id": "JC.DEV.NPM.CACACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "GradleDaemon",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "gradle",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "java",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "kotlin",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "npm",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "pnpm",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "yarn",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "node",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "bun",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "cargo",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "rustc",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "rustup",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "go",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "pip",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "pip3",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "uv",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "conda",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "pod",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "xcodebuild",
+      "rule_id": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "mvn",
+      "rule_id": "JC.DEV.PKG.L2"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "dotnet",
+      "rule_id": "JC.DEV.PKG.L2"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "java",
+      "rule_id": "JC.DEV.PKG.L2"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "cargo",
+      "rule_id": "JC.DEV.PKG.L2"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "conda",
+      "rule_id": "JC.DEV.PKG.L2"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "idea",
+      "rule_id": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "pycharm",
+      "rule_id": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "webstorm",
+      "rule_id": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "goland",
+      "rule_id": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clion",
+      "rule_id": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "rider",
+      "rule_id": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "datagrip",
+      "rule_id": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "phpstorm",
+      "rule_id": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "rubymine",
+      "rule_id": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "rustrover",
+      "rule_id": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "java",
+      "rule_id": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.spotify.client",
+      "rule_id": "JC.MEDIA.SPOTIFY.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "Spotify",
+      "rule_id": "JC.MEDIA.SPOTIFY.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.apple.AppStore",
+      "rule_id": "JC.SYS.APPSTORE.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "storedownloadd",
+      "rule_id": "JC.SYS.APPSTORE.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "xcodebuild",
+      "rule_id": "JC.DEV.XCODE.DERIVED.ORPHAN"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift",
+      "rule_id": "JC.DEV.XCODE.DERIVED.ORPHAN"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift-frontend",
+      "rule_id": "JC.DEV.XCODE.DERIVED.ORPHAN"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang",
+      "rule_id": "JC.DEV.XCODE.DERIVED.ORPHAN"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang++",
+      "rule_id": "JC.DEV.XCODE.DERIVED.ORPHAN"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "ibtool",
+      "rule_id": "JC.DEV.XCODE.DERIVED.ORPHAN"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.apple.dt.Xcode",
+      "rule_id": "JC.DEV.XCODE.DEVICESUPPORT"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "xcodebuild",
+      "rule_id": "JC.DEV.XCODE.DEVICESUPPORT"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift",
+      "rule_id": "JC.DEV.XCODE.DEVICESUPPORT"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift-frontend",
+      "rule_id": "JC.DEV.XCODE.DEVICESUPPORT"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang",
+      "rule_id": "JC.DEV.XCODE.DEVICESUPPORT"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang++",
+      "rule_id": "JC.DEV.XCODE.DEVICESUPPORT"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "ibtool",
+      "rule_id": "JC.DEV.XCODE.DEVICESUPPORT"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "xcodebuild",
+      "rule_id": "JC.DEV.XCODE.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift",
+      "rule_id": "JC.DEV.XCODE.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift-frontend",
+      "rule_id": "JC.DEV.XCODE.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang",
+      "rule_id": "JC.DEV.XCODE.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang++",
+      "rule_id": "JC.DEV.XCODE.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "ibtool",
+      "rule_id": "JC.DEV.XCODE.CACHE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "xcodebuild",
+      "rule_id": "JC.DEV.XCODE.DERIVED.LIVE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift",
+      "rule_id": "JC.DEV.XCODE.DERIVED.LIVE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "swift-frontend",
+      "rule_id": "JC.DEV.XCODE.DERIVED.LIVE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang",
+      "rule_id": "JC.DEV.XCODE.DERIVED.LIVE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "clang++",
+      "rule_id": "JC.DEV.XCODE.DERIVED.LIVE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "ibtool",
+      "rule_id": "JC.DEV.XCODE.DERIVED.LIVE"
+    },
+    {
+      "lock_kind": "process_name",
+      "lock_value": "JianyingPro",
+      "rule_id": "JC.DSG.JIANYING.CACHE"
+    },
+    {
+      "lock_kind": "bundle_id",
+      "lock_value": "com.lemon.lv",
+      "rule_id": "JC.DSG.JIANYING.CACHE"
+    }
+  ],
+  "ruleLimits": [
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.AI.OLLAMA.ORPHAN"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.AI.WORKTREE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.BRW.CHROMIUM.SW"
+    },
+    {
+      "activationAllowed": false,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L4",
+      "ruleID": "JC.BRW.SAFARI"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.ELECTRON.SW"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.MEDIA.SPOTIFY"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.MEDIA.SPOTIFY.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.IM.QQ"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.IM.TELEGRAM.MEDIA"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.IM.WECHAT.MEDIA"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.IM.WECOM"
+    },
+    {
+      "activationAllowed": false,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L4",
+      "ruleID": "JC.DSG.FCP"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.DEV.PUB.ASSET"
+    },
+    {
+      "activationAllowed": false,
+      "allowedActions": [
+        "native"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.SIMCTL.RUNTIME"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.DEV.XCODE.ARCHIVES"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.DEV.XCODE.DEVICESUPPORT.LATEST"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.DEV.XCODE.SIMULATOR"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.DEV.XCODE.SYSTEM.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.AI.LMSTUDIO"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.AI.OLLAMA.MODEL"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.SYS.IOS.BACKUP"
+    },
+    {
+      "activationAllowed": false,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L4",
+      "ruleID": "JC.SYS.MAIL"
+    },
+    {
+      "activationAllowed": false,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L4",
+      "ruleID": "JC.SYS.QUARANTINE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L3",
+      "ruleID": "JC.SYS.SAVEDSTATE"
+    },
+    {
+      "activationAllowed": false,
+      "allowedActions": [
+        "read_only"
+      ],
+      "minimumTier": "L4",
+      "ruleID": "JC.SYS.VARLOG"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.CACHE.USER"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.CACHE.CONTAINER"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.ELECTRON.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.BRW.CHROMIUM.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.BRW.SAFARI.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.BRW.FIREFOX.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.BRW.ARC.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.LOG.USER"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.LOG.DIAG.USER"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.XCODE.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.DEV.XCODE.DERIVED.ORPHAN"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.XCODE.DERIVED.LIVE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.XCODE.DEVICESUPPORT"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.DEV.NPM.LOGS"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.NPM.CACACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.PKG.SAFE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.PKG.L2"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.DEV.GRADLE.DAEMON"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.BREW.DOWNLOADS"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.BREW.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.PKG.UNVERIFIED"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.PROJECT"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.IM.WECHAT.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.IM.MEET"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L1",
+      "ruleID": "JC.AI.IDE.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.AI.TOOL.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.AI.HF.MODEL"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.AI.GEMINI.TMP"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DSG.ADOBE.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DSG.ADOBE.MEDIACACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DSG.JIANYING.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.LEFTOVER.ORPHAN"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.SYS.TMP.DARWIN"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.SYS.CACHE.DARWIN"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.SYS.PLIST.BROKEN"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.SYS.DMG.INSTALLED"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.SYS.DMG.OTHER"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.SYS.IPSW"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.JETBRAINS.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.SYS.APPSTORE.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.BRW.AUTOMATION.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.APP.LARK.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash_children_only"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.MEDIA.NETEASE.CACHE"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.DEV.BROWSER.DOWNLOAD"
+    },
+    {
+      "activationAllowed": true,
+      "allowedActions": [
+        "trash"
+      ],
+      "minimumTier": "L2",
+      "ruleID": "JC.AI.OLDVERSION"
+    }
+  ],
+  "scanners": [
+    "BrewHelper.scanCacheItems",
+    "ProjectPurgeEngine.scan",
+    "XcodeHelper.scanSimulatorDevices",
+    "deferred",
+    "inventoryOnly",
+    "rejected",
+    "scanAppStoreCache",
+    "scanBrokenPreferences",
+    "scanBrowserCaches",
+    "scanDeveloperCaches",
+    "scanIOSUpdates",
+    "scanJetBrainsCaches",
+    "scanMobileBackups",
+    "scanOrphanedAppFiles",
+    "scanProfileCache",
+    "scanSystemCaches",
+    "scanSystemLogs",
+    "scanUnusedDiskImages",
+    "scanUserCaches",
+    "scanXcodeJunk"
+  ],
+  "schema": {
+    "cm_application_identity": "CREATE TABLE cm_application_identity (bundle_id TEXT PRIMARY KEY,name TEXT NOT NULL)",
+    "cm_auto_clean_cache": "CREATE TABLE cm_auto_clean_cache (\n cache_key TEXT PRIMARY KEY COLLATE NOCASE\n)",
+    "cm_cache_profile": "CREATE TABLE cm_cache_profile (\n    id TEXT PRIMARY KEY,\n    rule_id TEXT NOT NULL REFERENCES cm_junk_rule(id),\n    root_template TEXT NOT NULL,\n    discovery_kind TEXT NOT NULL CHECK(discovery_kind IN\n        ('exact_root','chromium_leaves','electron_leaves','firefox_leaves','derived_children')),\n    cache_class TEXT NOT NULL CHECK(cache_class IN ('app','developer')),\n    rebuild_effect TEXT NOT NULL CHECK(rebuild_effect IN ('redownload','recompile','first_launch')),\n    cost_override TEXT NOT NULL CHECK(cost_override IN ('none','low','medium','high')),\n    UNIQUE(rule_id,root_template,discovery_kind)\n)",
+    "cm_cache_profile_lock": "CREATE TABLE cm_cache_profile_lock (\n    profile_id TEXT NOT NULL REFERENCES cm_cache_profile(id),\n    lock_kind TEXT NOT NULL CHECK(lock_kind IN ('bundle_id','process_name','process_family')),\n    lock_value TEXT NOT NULL,\n    PRIMARY KEY(profile_id,lock_kind,lock_value)\n)",
+    "cm_cache_subdir": "CREATE TABLE cm_cache_subdir (\n    rule_id TEXT NOT NULL REFERENCES cm_junk_rule(id),\n    name TEXT NOT NULL,\n    tier TEXT NOT NULL CHECK (tier IN ('L1','L2')),\n    PRIMARY KEY (rule_id, name)\n)",
+    "cm_chromium_profile_subdir": "CREATE TABLE cm_chromium_profile_subdir (\n    name   TEXT PRIMARY KEY,\n    tier   TEXT NOT NULL CHECK (tier IN ('L1','L2')),\n    action TEXT NOT NULL CHECK (action IN ('trash','trash_children_only'))\n)",
+    "cm_discovery_binding": "CREATE TABLE cm_discovery_binding (\n rule_id TEXT NOT NULL REFERENCES cm_junk_rule(id),\n path_template TEXT NOT NULL,\n path_kind TEXT NOT NULL CHECK(path_kind IN('root','glob','none')),\n scanner_id TEXT NOT NULL,\n discovery_kind TEXT NOT NULL CHECK(discovery_kind IN ('fixed_path','wildcard_child','profile_leaves','bundle_predicate','system_temp','explicit_not_supported')),\n status TEXT NOT NULL CHECK(status IN ('active','inventory_only','deferred','rejected')),\n PRIMARY KEY(rule_id,path_template)\n)",
+    "cm_electron_data_dir": "CREATE TABLE cm_electron_data_dir (\n    bundle_id TEXT PRIMARY KEY,\n    dir_name  TEXT NOT NULL\n)",
+    "cm_file_type": "CREATE TABLE cm_file_type (extension TEXT PRIMARY KEY,category TEXT NOT NULL)",
+    "cm_global_guard": "CREATE TABLE cm_global_guard (\n value TEXT NOT NULL,\n kind TEXT NOT NULL CHECK(kind IN('protected_bundle','protected_path','protected_root')),\n PRIMARY KEY(value,kind)\n)",
+    "cm_junk_rule": "CREATE TABLE cm_junk_rule (\n    id                TEXT PRIMARY KEY,\n    section           TEXT NOT NULL CHECK (section IN (\n                          'app','communication','developer','ai','design',\n                          'leftovers','system','storage')),\n    tier              TEXT NOT NULL CHECK (tier IN ('L1','L2','L3','L4')),\n    action            TEXT NOT NULL CHECK (action IN (\n                          'trash','trash_children_only','read_only','native')),\n    status            TEXT NOT NULL CHECK (status IN ('active','deferred','rejected')),\n    default_selected  INTEGER NOT NULL CHECK (default_selected IN (0,1)),\n    min_bytes         INTEGER,\n    min_age_hours     INTEGER,\n    rebuild_cost      TEXT NOT NULL CHECK (rebuild_cost IN ('none','low','medium','high')),\n    predicate         TEXT,\n    reason_code       TEXT NOT NULL DEFAULT 'REASON_CODE_MANUAL_REVIEW',\n    title_key         TEXT NOT NULL,\n    note              TEXT,\n    fixture_required  INTEGER NOT NULL CHECK (fixture_required IN (0,1)),\n    CHECK (default_selected = 0 OR (status = 'active' AND tier = 'L1')),\n    CHECK (status != 'rejected' OR tier = 'L4'),\n    CHECK (fixture_required = 0 OR status != 'active')\n)",
+    "cm_junk_rule_exclude": "CREATE TABLE cm_junk_rule_exclude (\n    rule_id TEXT NOT NULL REFERENCES cm_junk_rule(id),\n    name    TEXT NOT NULL,\n    PRIMARY KEY (rule_id, name)\n)",
+    "cm_junk_rule_lock": "CREATE TABLE cm_junk_rule_lock (\n    rule_id    TEXT NOT NULL REFERENCES cm_junk_rule(id),\n    lock_kind  TEXT NOT NULL CHECK (lock_kind IN ('bundle_id','process_name')),\n    lock_value TEXT NOT NULL,\n    PRIMARY KEY (rule_id, lock_kind, lock_value)\n)",
+    "cm_launchd_protected_prefix": "CREATE TABLE cm_launchd_protected_prefix (\n    prefix TEXT PRIMARY KEY,\n    reason TEXT NOT NULL\n)",
+    "cm_mail_client": "CREATE TABLE cm_mail_client (\n    bundle_id          TEXT PRIMARY KEY,\n    name               TEXT NOT NULL,\n    match_kind         TEXT NOT NULL CHECK (match_kind IN ('exact','prefix')),\n    role               TEXT NOT NULL CHECK (role IN ('third_party','system')),\n    list_on_uninstall  INTEGER NOT NULL CHECK (list_on_uninstall IN (0,1)),\n    default_selected   INTEGER NOT NULL CHECK (default_selected = 0),\n    exclude_from_junk  INTEGER NOT NULL CHECK (exclude_from_junk = 1),\n    exclude_from_orphan INTEGER NOT NULL CHECK (exclude_from_orphan = 1),\n    CHECK (role != 'third_party' OR list_on_uninstall = 1),\n    CHECK (role != 'system' OR list_on_uninstall = 0)\n)",
+    "cm_name_collision": "CREATE TABLE cm_name_collision (\n    name TEXT PRIMARY KEY COLLATE NOCASE\n)",
+    "cm_organize_path": "CREATE TABLE cm_organize_path (\n path_template TEXT NOT NULL,\n role TEXT NOT NULL CHECK(role IN('exclude_component','installer_root')),\n PRIMARY KEY(path_template,role)\n)",
+    "cm_package_extension": "CREATE TABLE cm_package_extension (extension TEXT PRIMARY KEY)",
+    "cm_performance_task": "CREATE TABLE cm_performance_task (\n    task_id           TEXT PRIMARY KEY,\n    status            TEXT NOT NULL CHECK (status IN ('allowed','disabled','forbidden')),\n    needs_admin       INTEGER NOT NULL CHECK (needs_admin IN (0,1)),\n    default_selected  INTEGER NOT NULL CHECK (default_selected IN (0,1)),\n    risk              TEXT NOT NULL CHECK (risk IN ('safe','caution','disruptive','forbidden')),\n    reversible        INTEGER NOT NULL CHECK (reversible IN (0,1)),\n    note              TEXT NOT NULL,\n    CHECK (status != 'forbidden' OR default_selected = 0),\n    CHECK (default_selected = 0 OR (status = 'allowed' AND needs_admin = 0 AND risk = 'safe'))\n)",
+    "cm_project_artifact": "CREATE TABLE cm_project_artifact (\n artifact_name TEXT PRIMARY KEY,\n candidate INTEGER NOT NULL CHECK(candidate IN(0,1)),\n generic_name INTEGER NOT NULL CHECK(generic_name IN(0,1)),\n proof_kind TEXT NOT NULL CHECK(proof_kind IN('parent_any','dotnet_project','disabled'))\n)",
+    "cm_project_artifact_proof": "CREATE TABLE cm_project_artifact_proof (\n artifact_name TEXT NOT NULL REFERENCES cm_project_artifact(artifact_name),\n proof_path TEXT NOT NULL,\n PRIMARY KEY(artifact_name,proof_path)\n)",
+    "cm_project_manifest": "CREATE TABLE cm_project_manifest (name TEXT PRIMARY KEY)",
+    "cm_project_scan_root": "CREATE TABLE cm_project_scan_root (root_template TEXT PRIMARY KEY)",
+    "cm_protected_path": "CREATE TABLE cm_protected_path (\n    id            TEXT PRIMARY KEY,\n    path_template TEXT NOT NULL,\n    match_kind    TEXT NOT NULL CHECK (match_kind IN ('prefix','suffix','exact','marker')),\n    reason        TEXT NOT NULL\n)",
+    "cm_rule_meta": "CREATE TABLE cm_rule_meta (\n    key   TEXT PRIMARY KEY,\n    value TEXT NOT NULL\n)",
+    "cm_rule_selection": "CREATE TABLE cm_rule_selection (\n rule_id TEXT PRIMARY KEY REFERENCES cm_junk_rule(id),\n daily_allowed INTEGER NOT NULL CHECK(daily_allowed IN(0,1)),\n developer_allowed INTEGER NOT NULL CHECK(developer_allowed IN(0,1)),\n maximum_allowed INTEGER NOT NULL CHECK(maximum_allowed IN(0,1)),\n manual_only INTEGER NOT NULL CHECK(manual_only IN(0,1)),\n CHECK(manual_only=0 OR (daily_allowed=0 AND developer_allowed=0 AND maximum_allowed=0))\n)",
+    "cm_service_worker_domain": "CREATE TABLE cm_service_worker_domain (\n    domain TEXT PRIMARY KEY,\n    tier   TEXT NOT NULL CHECK (tier = 'L2')\n)",
+    "cm_shared_vendor_root": "CREATE TABLE cm_shared_vendor_root (\n    name TEXT PRIMARY KEY COLLATE NOCASE\n)",
+    "cm_uninstall_template": "CREATE TABLE cm_uninstall_template (\n    id                TEXT PRIMARY KEY,\n    path_template     TEXT NOT NULL,\n    tier              TEXT NOT NULL CHECK (tier IN ('L1','L2','L3','L4')),\n    domain            TEXT NOT NULL CHECK (domain IN ('user','system','session')),\n    execute           INTEGER NOT NULL CHECK (execute IN (0,1)),\n    default_selected  INTEGER NOT NULL CHECK (default_selected IN (0,1)),\n    status            TEXT NOT NULL CHECK (status IN ('active','deferred','rejected')),\n    note              TEXT,\n    CHECK (default_selected = 0 OR (status = 'active' AND tier = 'L1' AND execute = 1)),\n    CHECK (domain != 'system' OR execute = 0),\n    CHECK (status != 'rejected' OR (execute = 0 AND default_selected = 0))\n)",
+    "cm_vacuum_forbidden": "CREATE TABLE cm_vacuum_forbidden (\n    id     TEXT PRIMARY KEY,\n    marker TEXT NOT NULL,\n    reason TEXT NOT NULL\n)",
+    "cm_version_cache": "CREATE TABLE cm_version_cache (\n rule_id TEXT NOT NULL REFERENCES cm_junk_rule(id),\n root_template TEXT NOT NULL,\n current_template TEXT,\n name_pattern TEXT NOT NULL,\n keep_latest INTEGER NOT NULL CHECK(keep_latest>=2),\n min_age_hours INTEGER NOT NULL CHECK(min_age_hours>=168),\n family TEXT NOT NULL CHECK(family IN('browser','agent')),\n PRIMARY KEY(rule_id,root_template),\n CHECK(family='browser' OR current_template IS NOT NULL)\n)"
+  },
+  "uninstallLimits": [
+    {
+      "default_selected": 1,
+      "domain": "user",
+      "execute": 1,
+      "id": "UNINST_01",
+      "status": "active",
+      "tier": "L1"
+    },
+    {
+      "default_selected": 0,
+      "domain": "user",
+      "execute": 1,
+      "id": "UNINST_02",
+      "status": "active",
+      "tier": "L2"
+    },
+    {
+      "default_selected": 0,
+      "domain": "user",
+      "execute": 1,
+      "id": "UNINST_05",
+      "status": "active",
+      "tier": "L2"
+    },
+    {
+      "default_selected": 0,
+      "domain": "system",
+      "execute": 0,
+      "id": "UNINST_07",
+      "status": "active",
+      "tier": "L3"
+    },
+    {
+      "default_selected": 0,
+      "domain": "session",
+      "execute": 0,
+      "id": "UNINST_08",
+      "status": "active",
+      "tier": "L3"
+    },
+    {
+      "default_selected": 0,
+      "domain": "session",
+      "execute": 0,
+      "id": "UNINST_09",
+      "status": "active",
+      "tier": "L3"
+    },
+    {
+      "default_selected": 0,
+      "domain": "session",
+      "execute": 0,
+      "id": "UNINST_10",
+      "status": "active",
+      "tier": "L3"
+    },
+    {
+      "default_selected": 0,
+      "domain": "user",
+      "execute": 0,
+      "id": "UNINST_12",
+      "status": "active",
+      "tier": "L3"
+    },
+    {
+      "default_selected": 0,
+      "domain": "user",
+      "execute": 0,
+      "id": "UNINST_13",
+      "status": "active",
+      "tier": "L3"
+    },
+    {
+      "default_selected": 0,
+      "domain": "system",
+      "execute": 0,
+      "id": "UNINST_15",
+      "status": "active",
+      "tier": "L3"
+    },
+    {
+      "default_selected": 0,
+      "domain": "system",
+      "execute": 0,
+      "id": "UNINST_16",
+      "status": "active",
+      "tier": "L3"
+    },
+    {
+      "default_selected": 0,
+      "domain": "system",
+      "execute": 0,
+      "id": "UNINST_17",
+      "status": "rejected",
+      "tier": "L4"
+    },
+    {
+      "default_selected": 0,
+      "domain": "user",
+      "execute": 1,
+      "id": "UNINST_18",
+      "status": "active",
+      "tier": "L2"
+    },
+    {
+      "default_selected": 0,
+      "domain": "user",
+      "execute": 0,
+      "id": "UNINST_19",
+      "status": "active",
+      "tier": "L3"
+    },
+    {
+      "default_selected": 0,
+      "domain": "user",
+      "execute": 0,
+      "id": "UNINST_20",
+      "status": "active",
+      "tier": "L3"
+    },
+    {
+      "default_selected": 0,
+      "domain": "user",
+      "execute": 1,
+      "id": "UNINST_23",
+      "status": "active",
+      "tier": "L2"
+    },
+    {
+      "default_selected": 0,
+      "domain": "user",
+      "execute": 0,
+      "id": "UNINST_24",
+      "status": "active",
+      "tier": "L3"
+    },
+    {
+      "default_selected": 0,
+      "domain": "session",
+      "execute": 0,
+      "id": "UNINST_COOKIES",
+      "status": "rejected",
+      "tier": "L4"
+    },
+    {
+      "default_selected": 0,
+      "domain": "user",
+      "execute": 1,
+      "id": "UNINST_LOG",
+      "status": "active",
+      "tier": "L2"
+    },
+    {
+      "default_selected": 0,
+      "domain": "user",
+      "execute": 1,
+      "id": "UNINST_NAME",
+      "status": "active",
+      "tier": "L2"
+    }
+  ],
+  "versionCacheMinimum": {
+    "keepLatest": 2,
+    "minAgeHours": 168
+  },
+  "versionPatterns": {
+    "agent": "\\A[0-9]+(?:\\.[0-9]+){1,3}(?:-[A-Za-z0-9._-]+)?\\z",
+    "browser": "\\A(mac|mac_arm|linux|linux_arm|win32|win64)-[0-9]+(?:\\.[0-9]+){2,3}\\z"
+  },
+  "说明": "客户端内置的不可放宽限制；不随在线包替换。构建时生成 AppConfig.RuleSafety 的数据，运行时对照验证；以下为实施稿，尚未接入客户端。",
+  "bindingCapabilities": {
+    "JC.AI.GEMINI.TMP": [
+      "scanDeveloperCaches:profile_leaves"
+    ],
+    "JC.AI.HF.MODEL": [
+      "scanDeveloperCaches:fixed_path"
+    ],
+    "JC.AI.IDE.CACHE": [
+      "scanUserCaches:profile_leaves"
+    ],
+    "JC.AI.LMSTUDIO": [
+      "inventoryOnly:explicit_not_supported"
+    ],
+    "JC.AI.OLDVERSION": [
+      "scanProfileCache:profile_leaves"
+    ],
+    "JC.AI.OLLAMA.MODEL": [
+      "inventoryOnly:fixed_path"
+    ],
+    "JC.AI.OLLAMA.ORPHAN": [
+      "inventoryOnly:fixed_path"
+    ],
+    "JC.AI.TOOL.CACHE": [
+      "scanDeveloperCaches:fixed_path",
+      "scanUserCaches:fixed_path"
+    ],
+    "JC.AI.WORKTREE": [
+      "inventoryOnly:fixed_path"
+    ],
+    "JC.APP.LARK.CACHE": [
+      "scanProfileCache:profile_leaves"
+    ],
+    "JC.BRW.ARC.CACHE": [
+      "scanBrowserCaches:fixed_path",
+      "scanBrowserCaches:profile_leaves"
+    ],
+    "JC.BRW.AUTOMATION.CACHE": [
+      "scanProfileCache:profile_leaves"
+    ],
+    "JC.BRW.CHROMIUM.CACHE": [
+      "scanBrowserCaches:fixed_path",
+      "scanBrowserCaches:profile_leaves"
+    ],
+    "JC.BRW.CHROMIUM.SW": [
+      "inventoryOnly:explicit_not_supported"
+    ],
+    "JC.BRW.FIREFOX.CACHE": [
+      "scanBrowserCaches:profile_leaves"
+    ],
+    "JC.BRW.SAFARI": [
+      "deferred:explicit_not_supported"
+    ],
+    "JC.BRW.SAFARI.CACHE": [
+      "scanBrowserCaches:fixed_path"
+    ],
+    "JC.CACHE.CONTAINER": [
+      "scanUserCaches:fixed_path",
+      "scanUserCaches:wildcard_child"
+    ],
+    "JC.CACHE.USER": [
+      "scanUserCaches:wildcard_child"
+    ],
+    "JC.DEV.BREW.CACHE": [
+      "BrewHelper.scanCacheItems:fixed_path"
+    ],
+    "JC.DEV.BREW.DOWNLOADS": [
+      "BrewHelper.scanCacheItems:fixed_path"
+    ],
+    "JC.DEV.BROWSER.DOWNLOAD": [
+      "scanProfileCache:profile_leaves"
+    ],
+    "JC.DEV.GRADLE.DAEMON": [
+      "scanDeveloperCaches:fixed_path"
+    ],
+    "JC.DEV.JETBRAINS.CACHE": [
+      "scanJetBrainsCaches:profile_leaves"
+    ],
+    "JC.DEV.NPM.CACACHE": [
+      "scanDeveloperCaches:fixed_path"
+    ],
+    "JC.DEV.NPM.LOGS": [
+      "scanDeveloperCaches:fixed_path"
+    ],
+    "JC.DEV.PKG.L2": [
+      "scanDeveloperCaches:fixed_path"
+    ],
+    "JC.DEV.PKG.SAFE": [
+      "scanDeveloperCaches:fixed_path"
+    ],
+    "JC.DEV.PKG.UNVERIFIED": [
+      "inventoryOnly:explicit_not_supported"
+    ],
+    "JC.DEV.PROJECT": [
+      "ProjectPurgeEngine.scan:bundle_predicate"
+    ],
+    "JC.DEV.PUB.ASSET": [
+      "inventoryOnly:fixed_path"
+    ],
+    "JC.DEV.SIMCTL.RUNTIME": [
+      "deferred:explicit_not_supported"
+    ],
+    "JC.DEV.XCODE.ARCHIVES": [
+      "scanXcodeJunk:fixed_path"
+    ],
+    "JC.DEV.XCODE.CACHE": [
+      "scanXcodeJunk:fixed_path"
+    ],
+    "JC.DEV.XCODE.DERIVED.LIVE": [
+      "scanXcodeJunk:wildcard_child"
+    ],
+    "JC.DEV.XCODE.DERIVED.ORPHAN": [
+      "scanXcodeJunk:wildcard_child"
+    ],
+    "JC.DEV.XCODE.DEVICESUPPORT": [
+      "scanXcodeJunk:wildcard_child"
+    ],
+    "JC.DEV.XCODE.DEVICESUPPORT.LATEST": [
+      "scanXcodeJunk:bundle_predicate"
+    ],
+    "JC.DEV.XCODE.SIMULATOR": [
+      "XcodeHelper.scanSimulatorDevices:wildcard_child"
+    ],
+    "JC.DEV.XCODE.SYSTEM.CACHE": [
+      "scanXcodeJunk:profile_leaves"
+    ],
+    "JC.DSG.ADOBE.CACHE": [
+      "scanUserCaches:fixed_path"
+    ],
+    "JC.DSG.ADOBE.MEDIACACHE": [
+      "scanUserCaches:fixed_path"
+    ],
+    "JC.DSG.FCP": [
+      "deferred:explicit_not_supported"
+    ],
+    "JC.DSG.JIANYING.CACHE": [
+      "scanProfileCache:profile_leaves"
+    ],
+    "JC.ELECTRON.CACHE": [
+      "scanUserCaches:profile_leaves"
+    ],
+    "JC.ELECTRON.SW": [
+      "inventoryOnly:explicit_not_supported"
+    ],
+    "JC.IM.MEET": [
+      "scanSystemLogs:fixed_path",
+      "scanUserCaches:fixed_path"
+    ],
+    "JC.IM.QQ": [
+      "inventoryOnly:fixed_path"
+    ],
+    "JC.IM.TELEGRAM.MEDIA": [
+      "inventoryOnly:fixed_path",
+      "inventoryOnly:wildcard_child"
+    ],
+    "JC.IM.WECHAT.CACHE": [
+      "scanUserCaches:fixed_path"
+    ],
+    "JC.IM.WECHAT.MEDIA": [
+      "inventoryOnly:fixed_path"
+    ],
+    "JC.IM.WECOM": [
+      "inventoryOnly:fixed_path"
+    ],
+    "JC.LEFTOVER.ORPHAN": [
+      "scanOrphanedAppFiles:bundle_predicate"
+    ],
+    "JC.LOG.DIAG.USER": [
+      "scanSystemLogs:fixed_path"
+    ],
+    "JC.LOG.USER": [
+      "scanSystemLogs:fixed_path",
+      "scanSystemLogs:wildcard_child"
+    ],
+    "JC.MEDIA.NETEASE.CACHE": [
+      "scanProfileCache:profile_leaves"
+    ],
+    "JC.MEDIA.SPOTIFY": [
+      "inventoryOnly:fixed_path"
+    ],
+    "JC.MEDIA.SPOTIFY.CACHE": [
+      "inventoryOnly:fixed_path"
+    ],
+    "JC.SYS.APPSTORE.CACHE": [
+      "scanAppStoreCache:fixed_path"
+    ],
+    "JC.SYS.CACHE.DARWIN": [
+      "scanSystemCaches:system_temp"
+    ],
+    "JC.SYS.DMG.INSTALLED": [
+      "scanUnusedDiskImages:bundle_predicate"
+    ],
+    "JC.SYS.DMG.OTHER": [
+      "scanUnusedDiskImages:bundle_predicate"
+    ],
+    "JC.SYS.IOS.BACKUP": [
+      "scanMobileBackups:fixed_path"
+    ],
+    "JC.SYS.IPSW": [
+      "scanIOSUpdates:bundle_predicate"
+    ],
+    "JC.SYS.MAIL": [
+      "rejected:explicit_not_supported"
+    ],
+    "JC.SYS.PLIST.BROKEN": [
+      "scanBrokenPreferences:bundle_predicate"
+    ],
+    "JC.SYS.QUARANTINE": [
+      "rejected:explicit_not_supported"
+    ],
+    "JC.SYS.SAVEDSTATE": [
+      "inventoryOnly:fixed_path"
+    ],
+    "JC.SYS.TMP.DARWIN": [
+      "scanSystemCaches:system_temp"
+    ],
+    "JC.SYS.VARLOG": [
+      "rejected:explicit_not_supported"
+    ]
+  },
+  "pathScopes": {
+    "BrewHelper.scanCacheItems": [
+      "~/Library/Caches/Homebrew",
+      "~/Library/Caches/Homebrew/downloads"
+    ],
+    "ProjectPurgeEngine.scan": [],
+    "XcodeHelper.scanSimulatorDevices": [],
+    "deferred": [],
+    "inventoryOnly": [],
+    "rejected": [],
+    "scanAppStoreCache": [
+      "~/Library/Caches/com.apple.appstore"
+    ],
+    "scanBrokenPreferences": [
+      "~/Library/Preferences"
+    ],
+    "scanBrowserCaches": [
+      "~/Library/Application Support/Arc/User Data",
+      "~/Library/Application Support/BraveSoftware/Brave-Browser",
+      "~/Library/Application Support/Chromium",
+      "~/Library/Application Support/Google/Chrome",
+      "~/Library/Application Support/Microsoft Edge",
+      "~/Library/Application Support/Vivaldi",
+      "~/Library/Application Support/com.operasoftware.Opera",
+      "~/Library/Caches/Arc",
+      "~/Library/Caches/Firefox/Profiles/*/cache2",
+      "~/Library/Caches/Firefox/Profiles/*/startupCache",
+      "~/Library/Caches/Google/Chrome",
+      "~/Library/Caches/com.apple.Safari",
+      "~/Library/Caches/company.thebrowser.Browser",
+      "~/Library/Containers/com.apple.Safari/Data/Library/Caches",
+      "~/Library/Caches",
+      "~/.cache"
+    ],
+    "scanDeveloperCaches": [
+      "~/.android/build-cache",
+      "~/.android/cache",
+      "~/.bun/install/cache",
+      "~/.cache/chrome-devtools-mcp",
+      "~/.cache/codex-runtimes",
+      "~/.cache/cursor-agent",
+      "~/.cache/go-build",
+      "~/.cache/helm",
+      "~/.cache/huggingface/hub",
+      "~/.cache/ms-playwright",
+      "~/.cache/opencode",
+      "~/.cache/pip",
+      "~/.cache/playwright",
+      "~/.cache/torch",
+      "~/.cache/torch/hub/checkpoints",
+      "~/.cache/uv",
+      "~/.cache/yarn",
+      "~/.cargo/git/db",
+      "~/.cargo/registry/cache",
+      "~/.cargo/registry/src",
+      "~/.claude/downloads",
+      "~/.claude/shell-snapshots",
+      "~/.claude/telemetry",
+      "~/.codex/cache",
+      "~/.codex/log",
+      "~/.composer/cache",
+      "~/.conda/pkgs",
+      "~/.cursor/ai-tracking",
+      "~/.docker/buildx/activity",
+      "~/.gem/cache",
+      "~/.gemini/antigravity-browser-profile",
+      "~/.gemini/tmp",
+      "~/.gradle/caches",
+      "~/.gradle/daemon",
+      "~/.gradle/wrapper/dists",
+      "~/.ivy2/cache",
+      "~/.local/share/opencode/log",
+      "~/.local/share/pnpm/store",
+      "~/.m2/repository",
+      "~/.node-gyp",
+      "~/.npm/_cacache",
+      "~/.npm/_logs",
+      "~/.nuget/packages",
+      "~/.sbt/boot",
+      "~/.terraform.d/plugin-cache",
+      "~/.yarn/cache",
+      "~/Library/Caches/CocoaPods",
+      "~/Library/Caches/Yarn",
+      "~/Library/Caches/composer",
+      "~/Library/Caches/go-build",
+      "~/Library/Caches/goimports",
+      "~/Library/Caches/helm",
+      "~/Library/Caches/hermit",
+      "~/Library/Caches/ms-playwright",
+      "~/Library/Caches/node-gyp",
+      "~/Library/Caches/org.swift.swiftpm",
+      "~/Library/Caches/pip",
+      "~/Library/Caches/pnpm",
+      "~/Library/Caches/uv",
+      "~/Library/Logs/JetBrains",
+      "~/Library/pnpm/store",
+      "~/Library/Caches",
+      "~/.cache"
+    ],
+    "scanIOSUpdates": [
+      "~/Downloads"
+    ],
+    "scanJetBrainsCaches": [
+      "~/Library/Caches/JetBrains/*/caches",
+      "~/Library/Caches/JetBrains/*/compile-server",
+      "~/Library/Caches/JetBrains/*/index",
+      "~/Library/Caches/JetBrains/*/jcef_cache",
+      "~/Library/Caches/JetBrains/*/log",
+      "~/Library/Caches/JetBrains/*/tmp"
+    ],
+    "scanMobileBackups": [],
+    "scanOrphanedAppFiles": [
+      "~/Library/Application Support/CrashReporter",
+      "~/Library/Caches",
+      "~/Library/HTTPStorages",
+      "~/Library/Logs",
+      "~/Library/Saved Application State",
+      "~/Library/WebKit"
+    ],
+    "scanProfileCache": [
+      "~/.cache/chrome-devtools-mcp/chrome-profile/*/Cache",
+      "~/.cache/chrome-devtools-mcp/chrome-profile/*/Code Cache",
+      "~/.cache/chrome-devtools-mcp/chrome-profile/*/GPUCache",
+      "~/.cache/puppeteer/chrome-headless-shell/*",
+      "~/.cache/puppeteer/chrome/*",
+      "~/.codex/packages/app-server-daemon/releases/*",
+      "~/.local/share/cursor-agent/versions/*",
+      "~/Library/Application Support/Cursor/User/globalStorage/anysphere.cursor-agent-worker/agent-cli/.local/share/cursor-agent/versions/*",
+      "~/Library/Caches/LarkShell*/aha/users/*/PartitionsV2/*/Cache",
+      "~/Library/Caches/LarkShell*/aha/users/*/PartitionsV2/*/Code Cache",
+      "~/Library/Caches/LarkShell*/aha/users/*/profile_*/Cache",
+      "~/Library/Caches/LarkShell*/aha/users/*/profile_*/Code Cache",
+      "~/Library/Caches/LarkShell*/iron/users/*/PartitionsV2/*/Cache",
+      "~/Library/Caches/LarkShell*/iron/users/*/PartitionsV2/*/Code Cache",
+      "~/Library/Caches/LarkShell*/iron/users/*/profile_*/Cache",
+      "~/Library/Caches/LarkShell*/iron/users/*/profile_*/Code Cache",
+      "~/Library/Caches/ms-playwright-mcp/mcp-chrome-*/*/Cache",
+      "~/Library/Caches/ms-playwright-mcp/mcp-chrome-*/*/Code Cache",
+      "~/Library/Caches/ms-playwright-mcp/mcp-chrome-*/*/GPUCache",
+      "~/Library/Containers/com.netease.163music/Data/Library/Caches/online_play_cache",
+      "~/Movies/JianyingPro/User Data/Cache/audioWave",
+      "~/Movies/JianyingPro/User Data/Cache/frameThumbnail",
+      "~/Movies/JianyingPro/User Data/Cache/recognize",
+      "~/Library/Caches",
+      "~/.cache"
+    ],
+    "scanSystemCaches": [
+      "{DARWIN_USER_CACHE_DIR}",
+      "{DARWIN_USER_TEMP_DIR}"
+    ],
+    "scanSystemLogs": [
+      "/Library/Logs/CrashReporter",
+      "/Library/Logs/DiagnosticReports",
+      "~/Library/Application Support/CrashReporter",
+      "~/Library/Containers/*/Data/Library/Logs",
+      "~/Library/Containers/com.tencent.meeting/Data/Library/Logs",
+      "~/Library/Logs",
+      "~/Library/Logs/CrashReporter",
+      "~/Library/Logs/DiagnosticReports",
+      "~/Library/Logs/HangReporter",
+      "~/Library/Logs/zoom.us",
+      "~/Library/Logs"
+    ],
+    "scanUnusedDiskImages": [
+      "~/Desktop",
+      "~/Downloads"
+    ],
+    "scanUserCaches": [
+      "~/Library/Application Support/Adobe/Common/Media Cache",
+      "~/Library/Application Support/Adobe/Common/Media Cache Files",
+      "~/Library/Application Support/Adobe/Common/Peak Files",
+      "~/Library/Application Support/Antigravity",
+      "~/Library/Application Support/Claude",
+      "~/Library/Application Support/Cursor",
+      "~/Library/Application Support/Windsurf",
+      "~/Library/Application Support/{electronDataDir}",
+      "~/Library/Caches",
+      "~/Library/Caches/Adobe",
+      "~/Library/Caches/antigravity-updater",
+      "~/Library/Caches/claude-cli-nodejs",
+      "~/Library/Caches/com.google.antigravity",
+      "~/Library/Caches/com.openai.codex",
+      "~/Library/Caches/cursor-compile-cache",
+      "~/Library/Caches/us.zoom.xos",
+      "~/Library/Containers/*/Data/Library/Caches",
+      "~/Library/Containers/com.tencent.meeting/Data/Library/Caches",
+      "~/Library/Containers/com.tencent.xinWeChat/Data/Library/Caches",
+      "~/Library/Containers/com.youku.mac/Data/Documents/YTCORE_PLAYER_CACHE",
+      "~/Library/Group Containers/*/Library/Caches",
+      "~/Library/Caches",
+      "~/.cache"
+    ],
+    "scanXcodeJunk": [
+      "~/Library/Caches/com.apple.dt.Xcode",
+      "~/Library/Developer/CoreSimulator/Caches",
+      "~/Library/Developer/Xcode/DerivedData",
+      "~/Library/Developer/Xcode/DerivedData/ModuleCache.noindex",
+      "~/Library/Developer/Xcode/DocumentationCache",
+      "~/Library/Developer/Xcode/UserData/IB Support",
+      "~/Library/Developer/Xcode/UserData/Previews",
+      "~/Library/Developer/Xcode/iOS DeviceSupport",
+      "~/Library/Developer/Xcode/macOS DeviceSupport",
+      "~/Library/Developer/Xcode/tvOS DeviceSupport",
+      "~/Library/Developer/Xcode/visionOS DeviceSupport",
+      "~/Library/Developer/Xcode/watchOS DeviceSupport",
+      "~/Library/Logs/CoreSimulator"
+    ]
+  },
+  "newRuleScanners": [
+    "scanUserCaches",
+    "scanDeveloperCaches",
+    "scanProfileCache",
+    "scanBrowserCaches",
+    "scanSystemLogs"
+  ],
+  "projectArtifactFloors": [
+    {
+      "artifact_name": ".astro",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".build",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".cache",
+      "candidate": 1,
+      "generic_name": 1,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".dart_tool",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".docusaurus",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".godot",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".gradle",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".import",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".mypy_cache",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".next",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".nuxt",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".output",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".parcel-cache",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".pytest_cache",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".ruff_cache",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".sass-cache",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".serverless",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".svelte-kit",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".swiftpm",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".terraform",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".tox",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".turbo",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".venv",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": ".vite",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "DerivedData",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "disabled"
+    },
+    {
+      "artifact_name": "Pods",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "__pycache__",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "bin",
+      "candidate": 0,
+      "generic_name": 0,
+      "proof_kind": "dotnet_project"
+    },
+    {
+      "artifact_name": "build",
+      "candidate": 1,
+      "generic_name": 1,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "cmake-build-debug",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "cmake-build-release",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "coverage",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "dist",
+      "candidate": 1,
+      "generic_name": 1,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "env",
+      "candidate": 0,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "node_modules",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "obj",
+      "candidate": 1,
+      "generic_name": 1,
+      "proof_kind": "dotnet_project"
+    },
+    {
+      "artifact_name": "out",
+      "candidate": 1,
+      "generic_name": 1,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "target",
+      "candidate": 1,
+      "generic_name": 1,
+      "proof_kind": "parent_any"
+    },
+    {
+      "artifact_name": "venv",
+      "candidate": 1,
+      "generic_name": 0,
+      "proof_kind": "parent_any"
+    }
+  ]
+}

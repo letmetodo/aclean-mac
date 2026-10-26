@@ -1,0 +1,6 @@
+CFBundleName = "ACleaner";
+CFBundleDisplayName = "ACleaner";
+NSDocumentsFolderUsageDescription = "ACleaner necesita acceso a esta ubicación para analizar archivos. Tú eliges qué limpiar.";
+NSDownloadsFolderUsageDescription = "ACleaner necesita acceso a esta ubicación para analizar archivos. Tú eliges qué limpiar.";
+NSDesktopFolderUsageDescription = "ACleaner necesita acceso a esta ubicación para analizar archivos. Tú eliges qué limpiar.";
+NSAppleEventsUsageDescription = "ACleaner necesita acceso a esta ubicación para analizar archivos. Tú eliges qué limpiar.";

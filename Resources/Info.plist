@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CleanMateRulesBaseURL</key>
+	<string>https://raw.githubusercontent.com/letmetodo/aclean-db/main/</string>
+	<key>CFBundleName</key>
+	<string>ACleaner</string>
+	<key>CFBundleDisplayName</key>
+	<string>ACleaner</string>
+	<key>CFBundleExecutable</key>
+	<string>AClean</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.personal.aclean</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSHumanReadableCopyright</key>
+	<string>ACleaner</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>ACleaner 需要通过 Finder 获取废纸篓与系统状态。</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>ACleaner 需要访问“文稿”文件夹以扫描和清理大文件与冗余数据。</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>ACleaner 需要访问“下载”文件夹以扫描和清理重复与过期文件。</string>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>ACleaner 需要访问“桌面”文件夹以分析磁盘空间占用。</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>zh-Hans</string>
+		<string>zh-Hant</string>
+		<string>en</string>
+		<string>ja</string>
+		<string>ko</string>
+		<string>fr</string>
+		<string>de</string>
+		<string>es</string>
+		<string>it</string>
+		<string>pt-BR</string>
+	</array>
+</dict>
+</plist>

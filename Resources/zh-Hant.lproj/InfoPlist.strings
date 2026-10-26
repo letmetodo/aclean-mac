@@ -1,0 +1,6 @@
+CFBundleName = "ACleaner";
+CFBundleDisplayName = "ACleaner";
+NSDocumentsFolderUsageDescription = "ACleaner 需要存取此位置以掃描檔案。清理須經你的選擇。";
+NSDownloadsFolderUsageDescription = "ACleaner 需要存取此位置以掃描檔案。清理須經你的選擇。";
+NSDesktopFolderUsageDescription = "ACleaner 需要存取此位置以掃描檔案。清理須經你的選擇。";
+NSAppleEventsUsageDescription = "ACleaner 需要存取此位置以掃描檔案。清理須經你的選擇。";

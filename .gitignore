@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+._*
+
+# Build products
+build/
+DerivedData/
+*.app/
+*.dmg
+*.xcarchive/
+*.o
+*.swiftmodule
+
+# Local environment and editor files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.p12
+*.pfx
+*.key
+*.mobileprovision
+*.provisionprofile
+*.keystore
+*.jks
+AuthKey_*.p8
+id_rsa
+id_ed25519
+*.xcuserstate
+xcuserdata/
+.idea/
+.vscode/
