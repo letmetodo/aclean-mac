@@ -23,7 +23,7 @@ Language: [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · 
 
 ## 🌟 Ce qui distingue AClean
 
-- **L’application native elle-même est open source.** L’app SwiftUI d’AClean est publiée sous Apache-2.0. Les modèles varient selon les projets : la documentation de Mole distingue son CLI gratuit et open source de son application Mac payante, dont le code source ne figure pas dans le dépôt public ([Mole for Mac](https://github.com/tw93/Mole-App)).
+- **L’application native elle-même est open source.** L’app SwiftUI d’AClean est publiée sous Apache-2.0 et peut être examinée, modifiée et redistribuée.
 - **Plusieurs usages dans une seule app native.** Examinez les éléments à nettoyer, explorez le disque avec une arborescence visuelle, vérifiez les fichiers associés avant de désinstaller une app, consultez l’état général du système et affichez rapidement son statut depuis la barre des menus.
 - **Vérifier avant de nettoyer.** AClean affiche les éléments pris en charge et leur emplacement avant de confirmer la sélection.
 - **Dix langues.** L’interface et le README sont disponibles en dix langues.
@@ -54,14 +54,22 @@ cd aclean-mac
 
 AClean est écrit en Swift avec le SDK macOS. La compilation locale cible Apple Silicon. Downloadable builds, when available, will be listed in [Releases](https://github.com/letmetodo/aclean-mac/releases). Run the test suite with `./Tests/run_tests.sh`.
 
-## 🔐 Cleanup and privacy
+## 🔐 Confidentialité, périmètre d’analyse et suppression
 
-AClean affiche les éléments détectés avant le nettoyage. Vérifiez les éléments sélectionnés et leur emplacement avant de confirmer. Consultez le code et les notes de version pour connaître le comportement d’une version donnée. Certaines fonctions réseau sont facultatives, notamment les mises à jour des règles, la météo et la localisation par IP.
+- **Périmètre:** selon le module, AClean examine les chemins locaux pris en charge par ses règles : caches et journaux d’apps, de navigateurs et du système ; données de développement comme Xcode DerivedData/CoreSimulator ; caches de gestionnaires de paquets ; apps installées et fichiers associés identifiés. Space Lens affiche l’espace disque local en lecture seule. Certains emplacements protégés exigent l’Accès complet au disque ; sans cette autorisation, les résultats peuvent être incomplets.
+- **Avant l’action:** l’aperçu du nettoyage et de la désinstallation affiche le nom, le chemin et la taille des éléments proposés afin de vérifier la sélection avant confirmation.
+- **Restauration:** les fichiers ordinaires nettoyés et les fichiers associés aux apps sont déplacés vers la Corbeille macOS et peuvent généralement être restaurés tant qu’ils s’y trouvent. Vider la Corbeille, supprimer des données de simulateur Xcode, lancer Docker/OrbStack prune et certaines récupérations d’instantanés APFS peuvent être irréversibles. Vérifiez le type d’action et le reçu avant de confirmer.
+- **Réseau:** la mise à jour automatique des règles est activée par défaut et télécharge un manifeste et une base de règles via HTTPS ; le serveur voit l’adresse IP de la requête et les métadonnées réseau habituelles. Les fonctions météo et localisation IP sont désactivées par défaut. Si elles sont activées, les fournisseurs de localisation voient l’IP ; la recherche de ville envoie le texte saisi et la langue de l’interface à Open-Meteo, et les prévisions envoient latitude et longitude. Les requêtes actuelles n’incluent ni chemins analysés, ni noms de fichiers, ni résultats de nettoyage. Les métriques système sont affichées localement.
 
-## 🤝 Contributing
+## ⚠️ Problèmes connus et limites
 
-Les issues et pull requests sont les bienvenues. Indiquez les versions de macOS et d’AClean, les étapes de reproduction et des journaux expurgés de données personnelles.
+- Le téléchargement actuel cible Apple Silicon (arm64) et nécessite macOS 13 ou une version ultérieure.
+- L’app v1.0.0 n’a pas de signature Apple Developer ID ni de notarisation. Gatekeeper peut bloquer le premier lancement ; consultez les notes de version et le [guide Apple pour ouvrir une app en toute sécurité](https://support.apple.com/en-us/102445).
+- Sans Accès complet au disque, certains emplacements protégés ne peuvent pas être analysés complètement. Les bugs suivis figurent dans [GitHub Issues](https://github.com/letmetodo/aclean-mac/issues).
+## 🛡️ Signaler une vulnérabilité et envoyer un retour
 
+- **Vulnérabilités de sécurité :** signalez-les en privé via [GitHub Security Advisories](https://github.com/letmetodo/aclean-mac/security/advisories/new). Ne publiez pas les détails dans une issue publique. Consultez [SECURITY.md](SECURITY.md).
+- **Bugs et suggestions :** utilisez [GitHub Issues](https://github.com/letmetodo/aclean-mac/issues/new) et indiquez les versions d’AClean et de macOS, le module concerné, les étapes de reproduction, le résultat attendu et observé, ainsi que des journaux ou captures sans chemins personnels ni données privées.
 ## 📜 License
 
 Licensed under the [Apache License 2.0](LICENSE).

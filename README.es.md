@@ -23,7 +23,7 @@ Language: [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · 
 
 ## 🌟 Qué distingue a AClean
 
-- **La propia app nativa es de código abierto.** La app SwiftUI de AClean se publica con Apache-2.0. Cada proyecto decide qué publica: la documentación de Mole distingue su CLI gratuita y de código abierto de su app para Mac de pago, cuyo código fuente no está en el repositorio público ([Mole for Mac](https://github.com/tw93/Mole-App)).
+- **La propia app nativa es de código abierto.** La app SwiftUI de AClean se publica con Apache-2.0 y puede revisarse, modificarse y redistribuirse.
 - **Varias tareas en una sola app nativa.** Revisa elementos de limpieza, explora el disco con un mapa de árbol visual, consulta archivos relacionados antes de desinstalar apps, revisa el estado general del sistema y accede rápidamente al estado desde la barra de menús.
 - **Revisa antes de limpiar.** AClean muestra los elementos compatibles y sus ubicaciones antes de confirmar la selección.
 - **Diez idiomas.** La interfaz de la app y el README están disponibles en diez idiomas.
@@ -54,14 +54,22 @@ cd aclean-mac
 
 AClean está escrito en Swift y usa el SDK de macOS. La compilación local está dirigida a Apple Silicon. Downloadable builds, when available, will be listed in [Releases](https://github.com/letmetodo/aclean-mac/releases). Run the test suite with `./Tests/run_tests.sh`.
 
-## 🔐 Cleanup and privacy
+## 🔐 Privacidad, alcance del análisis y eliminación
 
-AClean muestra los elementos encontrados antes de limpiar. Revisa la selección y sus ubicaciones antes de confirmar. Consulta el código y las notas de la versión para conocer el comportamiento de cada versión. Hay funciones de red opcionales, como actualizar reglas, consultar el tiempo y la ubicación por IP. No todas las funciones son necesariamente sin conexión.
+- **Alcance:** según el módulo, AClean revisa rutas locales compatibles con sus reglas: cachés y registros de apps, navegadores y sistema; datos de desarrollo como Xcode DerivedData/CoreSimulator; cachés de gestores de paquetes; y apps instaladas con archivos relacionados identificados. Space Lens muestra el uso del disco local en modo de solo lectura. Algunas ubicaciones protegidas requieren Acceso total al disco; sin él, los resultados pueden ser incompletos.
+- **Antes de actuar:** las vistas previas de limpieza y desinstalación muestran nombre, ruta y tamaño de los elementos para revisar la selección antes de confirmar.
+- **Recuperación:** los archivos de limpieza normal y los archivos relacionados con apps se mueven a la Papelera de macOS y, por lo general, pueden restaurarse mientras sigan allí. Vaciar la Papelera, eliminar datos de simuladores de Xcode, ejecutar Docker/OrbStack prune y algunas recuperaciones de instantáneas APFS pueden ser irreversibles. Revisa el tipo de acción y el recibo antes de confirmar.
+- **Red:** las actualizaciones automáticas de reglas están activadas de forma predeterminada y descargan un manifiesto y una base de reglas por HTTPS; el servidor ve la IP de la solicitud y metadatos de red habituales. El tiempo y la ubicación por IP están desactivados de forma predeterminada. Si se activan, los proveedores de ubicación ven la IP; la búsqueda de ciudad envía el texto y el idioma de la interfaz a Open-Meteo, y el pronóstico envía latitud y longitud. Las solicitudes actuales no incluyen rutas analizadas, nombres de archivos ni resultados de limpieza. Las métricas del sistema se muestran localmente.
 
-## 🤝 Contributing
+## ⚠️ Problemas conocidos y limitaciones
 
-Se aceptan issues y pull requests. Incluye las versiones de macOS y AClean, pasos para reproducir el problema y registros sin datos personales.
+- La descarga actual es solo para Apple Silicon (arm64) y requiere macOS 13 o posterior.
+- La app v1.0.0 no tiene firma Apple Developer ID ni notarización. Gatekeeper puede bloquear el primer inicio; consulta las notas de la versión y la [guía de Apple para abrir apps de forma segura](https://support.apple.com/en-us/102445).
+- Sin Acceso total al disco, algunas ubicaciones protegidas pueden no analizarse por completo. Los errores actualmente registrados están en [GitHub Issues](https://github.com/letmetodo/aclean-mac/issues).
+## 🛡️ Informes de seguridad y comentarios
 
+- **Vulnerabilidades:** repórtalas de forma privada en [GitHub Security Advisories](https://github.com/letmetodo/aclean-mac/security/advisories/new). No publiques detalles en una issue pública. Consulta [SECURITY.md](SECURITY.md).
+- **Errores y sugerencias:** usa [GitHub Issues](https://github.com/letmetodo/aclean-mac/issues/new). Incluye las versiones de AClean y macOS, el módulo afectado, pasos para reproducir, resultado esperado y real, y registros o capturas sin rutas personales ni datos privados.
 ## 📜 License
 
 Licensed under the [Apache License 2.0](LICENSE).

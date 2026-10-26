@@ -23,7 +23,7 @@ Language: [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · 
 
 ## 🌟 AClean の特長
 
-- **ネイティブアプリ自体がオープンソースです。** AClean の SwiftUI アプリは Apache-2.0 で公開されています。プロジェクトによって公開範囲は異なります。Mole のドキュメントでは、無料のオープンソース CLI と別の有料 Mac アプリを区別しており、公開リポジトリには Mac アプリのソースコードは含まれていません（[Mole for Mac](https://github.com/tw93/Mole-App)）。
+- **ネイティブアプリ自体がオープンソースです。** AClean の SwiftUI アプリは Apache-2.0 で公開され、確認・変更・再配布ができます。
 - **複数の作業を一つのネイティブアプリに集約。** クリーンアップ候補の確認、ツリーマップによるディスク分析、アプリ削除前の関連ファイル確認、システムの健康状態の確認、メニューバーからの状態チェックを行えます。
 - **確認してからクリーンアップ。** 実行前に、対応する候補とその場所を表示し、選択内容を確認できます。
 - **10言語に対応。** アプリのインターフェースと README を10言語で用意しています。
@@ -54,14 +54,22 @@ cd aclean-mac
 
 AClean は Swift と macOS SDK で構築されています。ローカルビルドは Apple Silicon 向けです。 Downloadable builds, when available, will be listed in [Releases](https://github.com/letmetodo/aclean-mac/releases). Run the test suite with `./Tests/run_tests.sh`.
 
-## 🔐 Cleanup and privacy
+## 🔐 プライバシー、スキャン範囲、削除
 
-AClean は削除前にスキャン候補を表示します。実行前に選択項目と場所を確認してください。動作はバージョンによって異なるため、ソースとリリースノートを確認してください。ルール更新、天気、IP ベースの位置情報などの任意のネットワーク機能があります。すべての機能がオフラインで動作するとは限りません。
+- **スキャン範囲:** モジュールに応じて、アプリ・ブラウザ・システムのキャッシュやログ、Xcode DerivedData/CoreSimulator などの開発データ、パッケージマネージャーのキャッシュ、インストール済みアプリと特定できた関連ファイルなど、ルールが対応するローカルパスを確認します。Space Lens はディスク使用量をローカルで読み取り専用表示します。一部の保護された場所にはフルディスクアクセスが必要です。許可されていない場合、結果は不完全になることがあります。
+- **実行前の確認:** クリーンアップやアンインストールの候補名、パス、サイズを表示し、選択内容を確認してから実行します。
+- **復元:** 通常のファイル削除とアプリの関連ファイルは macOS のゴミ箱へ移動し、ゴミ箱に残っている間は通常復元できます。ゴミ箱を空にする操作、Xcode シミュレーターデータの削除、Docker/OrbStack の prune、一部の APFS スナップショット回収は元に戻せない場合があります。実行前に操作種別と結果を確認してください。
+- **ネットワーク通信:** ルール更新は既定で自動有効になり、HTTPS でルールのマニフェストとデータベースを取得します。サーバーには接続元 IP と通常のリクエスト情報が見えます。天気や IP 位置情報などの任意ネットワーク機能は既定で無効です。有効にすると位置情報プロバイダーには接続元 IP が見え、都市検索では入力した都市名と UI 言語を Open-Meteo に送信し、天気予報では緯度・経度を送信します。現在のネットワークリクエストにスキャンパス、ファイル名、クリーンアップ結果は含まれません。システム使用状況はローカル表示です。
 
-## 🤝 Contributing
+## ⚠️ 既知の制限
 
-Issue と Pull Request を歓迎します。macOS と AClean のバージョン、再現手順、個人情報を除いたログを記載してください。
+- 現在のダウンロード版は Apple Silicon（arm64）専用で、macOS 13 以降が必要です。
+- v1.0.0 は Apple Developer ID 署名と公証を受けていません。初回起動時に Gatekeeper がブロックする場合があります。Release Notes と Apple の[安全な起動方法](https://support.apple.com/en-us/102445)をご確認ください。
+- フルディスクアクセスがないと、一部の保護された場所を完全にスキャンできません。追跡中の不具合は [GitHub Issues](https://github.com/letmetodo/aclean-mac/issues) をご覧ください。
+## 🛡️ 脆弱性の報告とフィードバック
 
+- **セキュリティ脆弱性:** [GitHub Security Advisories](https://github.com/letmetodo/aclean-mac/security/advisories/new) から非公開で報告してください。公開 Issue に脆弱性の詳細を書かないでください。詳しくは [SECURITY.md](SECURITY.md) をご覧ください。
+- **不具合・機能要望:** [GitHub Issues](https://github.com/letmetodo/aclean-mac/issues/new) を利用し、AClean と macOS のバージョン、対象モジュール、再現手順、期待する結果と実際の結果、個人パスなどを削除したログや画像を記載してください。
 ## 📜 License
 
 Licensed under the [Apache License 2.0](LICENSE).

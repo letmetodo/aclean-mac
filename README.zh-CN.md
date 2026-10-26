@@ -23,7 +23,7 @@ AClean 将日常 Mac 维护功能整合在 SwiftUI 应用中。清理前可查�
 
 ## 🌟 AClean 的项目亮点
 
-- **开源的是原生 App 本身。** AClean 的 SwiftUI 应用采用 Apache-2.0 许可证公开。不同项目的开源范围并不相同：Mole 的文档将免费开源 CLI 与独立的付费 Mac App 区分开来，其公开仓库不包含 Mac App 源码（[Mole for Mac](https://github.com/tw93/Mole-App)）。
+- **原生 App 本身开源。** AClean 的 SwiftUI 应用采用 Apache-2.0 许可证公开，方便用户审阅、修改和再分发。
 - **一个原生界面覆盖多种日常任务。** 在同一款 App 中预览清理候选项、用可视化矩形树图分析磁盘、卸载前检查应用关联文件、查看系统健康概况，并从菜单栏快速查看系统状态。
 - **先检查，再清理。** 确认清理前，AClean 会展示支持清理的候选项及其位置，供你检查选择。
 - **面向多语言用户。** App 界面和 README 均提供十种语言。
@@ -60,16 +60,22 @@ cd aclean-mac
 ./Tests/run_tests.sh
 ```
 
-## 🔐 清理与隐私
+## 🔐 隐私、扫描范围与删除
 
-AClean 会先展示扫描候选项。确认操作前，请检查已选项目及其位置。具体版本的行为请以对应源码和发布说明为准；扫描结果取决于 Mac 上安装的应用和文件。
+- **扫描范围：** 不同模块会检查规则支持的本机位置，包括应用、浏览器和系统缓存或日志，Xcode DerivedData/CoreSimulator 等开发数据、包管理器缓存，以及已安装应用和可匹配的关联文件。Space Lens 在本机只读展示磁盘占用。部分受保护位置需要“完全磁盘访问权限”；未授予时扫描结果可能不完整。
+- **操作前预览：** 清理和卸载预览会显示候选项名称、路径和大小，供你检查并选择后再确认。
+- **是否可恢复：** 普通文件清理和应用卸载关联文件会移入 macOS 废纸篓；只要还留在废纸篓中，通常可以恢复。清空废纸篓、删除 Xcode 模拟器数据、Docker/OrbStack 清理，以及部分 APFS 快照回收可能不可恢复。确认前请查看操作类型和回执。
+- **联网内容：** 规则更新默认自动开启，会通过 HTTPS 下载规则清单和数据库；服务器可看到请求 IP 及常规请求元数据。天气和 IP 定位等可选联网功能默认关闭。开启后，定位服务会看到请求 IP；城市搜索会向 Open-Meteo 发送输入的城市名和界面语言，天气预报请求会发送纬度、经度。当前网络请求不包含扫描路径、文件名或清理结果；系统用量数据在本机显示。
 
-应用包含可选的联网功能，例如规则更新、天气和基于 IP 的位置查询。请查看源码和应用内设置，了解哪些功能会发起网络请求；不要假设所有功能都仅在本地运行。
+## ⚠️ 已知问题与限制
 
-## 🤝 参与贡献
+- 当前可下载版本仅面向 Apple Silicon（arm64），要求 macOS 13 或更新版本。
+- v1.0.0 尚无 Apple Developer ID 签名和公证；Gatekeeper 首次打开时可能拦截。请查看 Release 说明和 Apple 的[安全打开指南](https://support.apple.com/en-us/102445)。
+- 未授予“完全磁盘访问权限”时，受保护位置可能不会完整出现在扫描结果中。当前已跟踪的问题见 [GitHub Issues](https://github.com/letmetodo/aclean-mac/issues)。
+## 🛡️ 安全漏洞报告与反馈
 
-欢迎提交 Issue 和 Pull Request。请附上 macOS 与 AClean 版本、复现步骤，以及已移除个人信息的相关日志。请勿公开发布安全漏洞；如本仓库启用了 GitHub 私密漏洞报告，请通过该渠道提交。
-
+- **安全漏洞：** 请通过 [GitHub Security Advisories 私密报告](https://github.com/letmetodo/aclean-mac/security/advisories/new)提交；不要在公开 Issue 中披露漏洞细节。详见 [SECURITY.md](SECURITY.md)。
+- **Bug 和功能建议：** 请到 [GitHub Issues](https://github.com/letmetodo/aclean-mac/issues/new)提交，并附上 AClean 与 macOS 版本、涉及模块、复现步骤、预期和实际结果，以及已移除个人路径和隐私信息的日志或截图。
 ## 📜 许可证
 
 本项目采用 [Apache License 2.0](LICENSE)。
