@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>A cleaner, clearer Mac.</strong><br />
-  Native macOS tools for cleanup, disk analysis, app removal, and system monitoring.
+  A free, open-source macOS cleaner with menu bar monitoring, junk cleanup, disk analysis, and app removal.
 </p>
 
 <p align="center">
@@ -31,7 +31,7 @@
 
 ## ✨ Explore AClean
 
-One native app for the maintenance work that usually gets scattered across separate utilities. AClean is built with SwiftUI and lets you inspect results before taking action.
+AClean is a free, open-source Mac cleaning app built with SwiftUI. It brings together macOS junk cleanup, disk space analysis, app uninstalling, and system monitoring, including quick system status from the menu bar dropdown. Review scan results before taking cleanup action.
 
 | Module | What it helps you do |
 | --- | --- |
@@ -39,7 +39,7 @@ One native app for the maintenance work that usually gets scattered across separ
 | 🗺️ **Space Lens** | Explore disk usage through a visual treemap and inspect large folders. |
 | 📦 **Applications** | Review installed apps and related files before uninstalling. |
 | ⚡ **Performance** | Inspect supported startup and maintenance opportunities. |
-| 📊 **System Status** | Monitor system activity and configure menu bar widgets. |
+| 📊 **System Status** | Monitor system activity and check system status from the menu bar dropdown. |
 | 🩺 **Health Check** | Review a multi-dimension overview of storage, memory, startup, cleanup, and privacy. |
 
 ## 📸 Real app screenshots

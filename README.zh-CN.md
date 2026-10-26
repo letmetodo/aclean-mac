@@ -2,11 +2,11 @@
 
 <h1 align="center">AClean</h1>
 
-<p align="center"><strong>A cleaner, clearer Mac.</strong></p>
+<p align="center"><strong>免费开源的 macOS 清理软件：菜单栏下拉监控、垃圾清理、磁盘空间分析与应用卸载。</strong></p>
 
 <p align="center"><a href="https://github.com/letmetodo/aclean-mac/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/letmetodo/aclean-mac?style=flat-square&logo=github"></a> <img alt="macOS" src="https://img.shields.io/badge/platform-macOS-24292f?style=flat-square&logo=apple"> <a href="LICENSE"><img alt="Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-42a77b?style=flat-square"></a></p>
 
-**一款原生 macOS 清理、磁盘分析、应用卸载与系统监控工具。**
+**AClean 是一款免费开源的 Mac 清理软件，提供菜单栏下拉系统监控、macOS 垃圾清理、磁盘空间分析与应用卸载功能。**
 
 AClean 将日常 Mac 维护功能整合在 SwiftUI 应用中。清理前可查看扫描结果，使用可视化方式分析磁盘空间，并在卸载应用时检查相关文件。
 
@@ -17,7 +17,7 @@ AClean 将日常 Mac 维护功能整合在 SwiftUI 应用中。清理前可查�
 - **智能清理**：扫描支持的应用、开发工具和系统缓存位置，清理前检查候选项。
 - **空间透镜**：通过可视化矩形树图查看磁盘空间占用。
 - **应用管理**：卸载前检查已安装应用及其关联文件。
-- **实时监控**：查看系统活动并配置菜单栏组件。
+- **实时监控**：查看系统活动，并通过菜单栏下拉面板快速查看系统状态。
 - **多语言界面**：简体中文、繁体中文、英语、日语、韩语、法语、德语、西班牙语、意大利语和巴西葡萄牙语。
 
 ## 软件实机截图
