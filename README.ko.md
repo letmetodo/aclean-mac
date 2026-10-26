@@ -20,6 +20,15 @@ Language: [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · 
 - **실시간 모니터** — 시스템 활동을 보고 메뉴 막대 위젯을 설정합니다.
 - Interface languages: Simplified Chinese, Traditional Chinese, English, Japanese, Korean, French, German, Spanish, Italian, and Brazilian Portuguese.
 
+
+## 🌟 AClean의 차별점
+
+- **네이티브 앱 자체가 오픈 소스입니다.** AClean의 SwiftUI 앱은 Apache-2.0으로 공개됩니다. 프로젝트마다 공개 범위는 다릅니다. Mole 문서는 무료 오픈 소스 CLI와 별도의 유료 Mac 앱을 구분하며, 공개 저장소에는 Mac 앱 소스 코드가 포함되지 않는다고 안내합니다([Mole for Mac](https://github.com/tw93/Mole-App)).
+- **하나의 네이티브 앱에서 여러 작업을 처리합니다.** 정리 후보를 미리 보고, 트리맵으로 디스크를 분석하고, 앱 제거 전에 관련 파일을 확인하며, 시스템 상태를 살펴보고 메뉴 막대에서 빠르게 확인할 수 있습니다.
+- **검토 후 정리합니다.** 정리를 확정하기 전에 지원되는 후보 항목과 경로를 표시해 선택 내용을 확인할 수 있습니다.
+- **10개 언어를 지원합니다.** 앱 인터페이스와 README를 10개 언어로 제공합니다.
+- **네트워크 사용을 공개합니다.** 선택형 규칙 업데이트, 날씨, IP 기반 위치 기능은 네트워크를 사용합니다. 자세한 내용은 ‘정리 및 개인정보 보호’와 소스 코드에서 확인할 수 있습니다.
+
 ## 📸 실제 앱 화면
 
 <table>

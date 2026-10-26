@@ -20,6 +20,15 @@ Language: [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · 
 - **ライブモニター** — システムの動作を確認し、メニューバーウィジェットを設定します。
 - Interface languages: Simplified Chinese, Traditional Chinese, English, Japanese, Korean, French, German, Spanish, Italian, and Brazilian Portuguese.
 
+
+## 🌟 AClean の特長
+
+- **ネイティブアプリ自体がオープンソースです。** AClean の SwiftUI アプリは Apache-2.0 で公開されています。プロジェクトによって公開範囲は異なります。Mole のドキュメントでは、無料のオープンソース CLI と別の有料 Mac アプリを区別しており、公開リポジトリには Mac アプリのソースコードは含まれていません（[Mole for Mac](https://github.com/tw93/Mole-App)）。
+- **複数の作業を一つのネイティブアプリに集約。** クリーンアップ候補の確認、ツリーマップによるディスク分析、アプリ削除前の関連ファイル確認、システムの健康状態の確認、メニューバーからの状態チェックを行えます。
+- **確認してからクリーンアップ。** 実行前に、対応する候補とその場所を表示し、選択内容を確認できます。
+- **10言語に対応。** アプリのインターフェースと README を10言語で用意しています。
+- **ネットワーク利用を明示。** 任意のルール更新、天気、IP位置情報機能はネットワークを使用します。詳細は「クリーンアップとプライバシー」とソースコードをご覧ください。
+
 ## 📸 アプリ画面
 
 <table>

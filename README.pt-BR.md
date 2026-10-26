@@ -20,6 +20,15 @@ Language: [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · 
 - **Monitoramento ao vivo** — Veja a atividade do sistema e configure widgets na barra de menus.
 - Interface languages: Simplified Chinese, Traditional Chinese, English, Japanese, Korean, French, German, Spanish, Italian, and Brazilian Portuguese.
 
+
+## 🌟 O que diferencia o AClean
+
+- **O próprio app nativo é open source.** O app SwiftUI do AClean é publicado sob a licença Apache-2.0. Cada projeto define o que abre: a documentação do Mole diferencia a CLI gratuita e open source do app para Mac pago, cujo código-fonte não está no repositório público ([Mole for Mac](https://github.com/tw93/Mole-App)).
+- **Várias tarefas em um único app nativo.** Revise itens de limpeza, explore o disco em um mapa de árvore visual, confira arquivos relacionados antes de desinstalar apps, veja o estado geral do sistema e consulte rapidamente o status pela barra de menus.
+- **Revise antes de limpar.** O AClean mostra os itens compatíveis e seus caminhos antes de você confirmar a seleção.
+- **Dez idiomas.** A interface do app e o README estão disponíveis em dez idiomas.
+- **Transparência no uso da rede.** Atualizações opcionais de regras, clima e localização por IP usam a rede. Consulte “Limpeza e privacidade” e o código-fonte para detalhes.
+
 ## 📸 Capturas reais do app
 
 <table>

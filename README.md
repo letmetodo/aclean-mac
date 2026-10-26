@@ -42,6 +42,15 @@ AClean is a free, open-source Mac cleaning app built with SwiftUI. It brings tog
 | 📊 **System Status** | Monitor system activity and check system status from the menu bar dropdown. |
 | 🩺 **Health Check** | Review a multi-dimension overview of storage, memory, startup, cleanup, and privacy. |
 
+
+## 🌟 What sets AClean apart
+
+- **The native app itself is open source.** AClean’s SwiftUI app is published under Apache-2.0. Project models vary: Mole’s documentation describes a free open-source CLI and a separate paid Mac app whose source is not included in its public repository ([Mole for Mac](https://github.com/tw93/Mole-App)).
+- **One Mac-native workspace for several jobs.** Review cleanup candidates, explore disk usage in a visual treemap, inspect app-related files before uninstalling, check overall system health, and glance at system status from the menu bar.
+- **Review before cleanup.** Supported candidates and their locations are shown before you confirm a cleanup selection.
+- **Built for an international audience.** The app interface and README are available in ten languages.
+- **Network behavior is disclosed.** Optional rule updates, weather, and IP-based location use the network; see Safety & privacy and the source for details.
+
 ## 📸 Real app screenshots
 
 <table>
